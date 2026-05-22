@@ -40,26 +40,31 @@ for a in articles:
     if not isinstance(a, dict):
         continue
 
-    title = a.get("title") or "No title"
+    title = a.get("title")
 
-    summary = (
-        a.get("summary")
-        or a.get("description")
-        or a.get("content")
-        or "No summary available"
-    )
+    if not title or title.lower() == "null":
+        continue
 
     source = (
         a.get("source")
         or a.get("source_name")
         or a.get("publisher")
-        or "Unknown source"
+        or ""
     )
 
-    if title.lower() == "null":
-        continue
+    summary = (
+        a.get("description")
+        or a.get("content")
+        or ""
+    )
 
     st.subheader(title)
-    st.caption(f"Source: {source}")
-    st.write(summary)
+
+    if source:
+        st.caption(source)
+
+    # only show summary if it actually exists
+    if summary:
+        st.write(summary)
+
     st.divider()
