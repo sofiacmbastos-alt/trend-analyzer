@@ -1,6 +1,7 @@
 import streamlit as st
 import requests
 import pandas as pd
+from datetime import datetime
 
 st.title("💎 Luxury Fashion Intelligence Dashboard")
 
@@ -62,45 +63,7 @@ st.subheader("📈 House Momentum")
 st.bar_chart(momentum)
 
 # -----------------------
-# 3. RUNWAY vs CELEBRITY SPLIT
-# -----------------------
-runway_keywords = ["runway", "fashion week", "collection", "show"]
-celebrity_keywords = ["wore", "outfit", "spotted", "look"]
-
-runway_score = sum(text.count(k) for k in runway_keywords)
-celebrity_score = sum(text.count(k) for k in celebrity_keywords)
-
-split = {
-    "Runway": runway_score,
-    "Celebrity": celebrity_score
-}
-
-st.subheader("🧵 Runway vs 🌟 Celebrity")
-st.bar_chart(split)
-
-# -----------------------
-# 4. MEDIA TYPE CLASSIFICATION
-# -----------------------
-media = {
-    "Editorial": runway_score,
-    "Celebrity": celebrity_score,
-    "Commercial": text.count("campaign") + text.count("ad")
-}
-
-st.subheader("📰 Media Type Split")
-st.bar_chart(media)
-
-# -----------------------
-# 5. LUXURY DOMINANCE SCORE (LDS)
-# -----------------------
-total_luxury = sum(lux_scores.values()) or 1
-lds = (total_luxury / len(articles)) * 100 if articles else 0
-
-st.subheader("💰 Luxury Dominance Score (LDS)")
-st.metric("Luxury Coverage %", f"{lds:.2f}%")
-
-# -----------------------
-# 6. BRAND CLUSTERS
+# 3. BRAND CLUSTERS
 # -----------------------
 clusters = {
     "LVMH": ["louis vuitton", "dior", "fendi"],
@@ -121,3 +84,45 @@ df = pd.DataFrame({
 })
 
 st.dataframe(df)
+
+# -----------------------
+# 4. WEEKLY FASHION REPORT GENERATOR
+# -----------------------
+st.subheader("📅 Weekly Fashion Report")
+
+total_articles = len(articles)
+
+top_brand = max(momentum, key=momentum.get) if momentum else "N/A"
+top_cluster = max(cluster_scores, key=cluster_scores.get) if cluster_scores else "N/A"
+top_category = max(lux_scores, key=lux_scores.get) if lux_scores else "N/A"
+
+report = f"""
+### 📊 Fashion Market Summary — Week of {datetime.now().strftime('%Y-%m-%d')}
+
+**Overall Coverage**
+- Total Articles Analyzed: {total_articles}
+- Market Activity Level: {"High" if total_articles > 15 else "Moderate" if total_articles > 5 else "Low"}
+
+**Top Performing Brand**
+- {top_brand}
+
+**Dominant Category**
+- {top_category}
+
+**Leading Fashion Group**
+- {top_cluster}
+
+---
+
+### 🔍 Key Insights
+- Luxury fashion continues to dominate media coverage.
+- Brand attention is concentrated around major heritage houses.
+- Cluster competition is primarily between LVMH and Kering.
+
+---
+
+### 📌 Analyst Note
+This report is generated from live fashion news signals and reflects media attention distribution rather than sales performance.
+"""
+
+st.markdown(report)
