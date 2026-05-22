@@ -59,3 +59,17 @@ for k, v in sorted(trend.items(), key=lambda x: x[1], reverse=True):
         st.write(f"📉 {k}: {v}% (Declining)")
     else:
         st.write(f"➖ {k}: {v}% (Stable)")
+
+import pandas as pd
+
+st.subheader("🔥 Brand Heatmap")
+
+df = pd.DataFrame({
+    "brand": list(today_counts.keys()),
+    "today": list(today_counts.values()),
+    "yesterday": [yesterday_counts.get(k, 0) for k in today_counts.keys()]
+})
+
+df["trend_score"] = df["today"] - df["yesterday"]
+
+st.bar_chart(df.set_index("brand")["trend_score"])
