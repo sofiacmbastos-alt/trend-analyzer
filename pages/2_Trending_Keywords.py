@@ -8,61 +8,54 @@ NEWS_API_KEY = st.secrets["NEWS_API_KEY"]
 
 url = "https://api.freenewsapi.io/v1/news"
 
-params = {
-    "topic": "fashion",
-    "language": "en"
-}
+data = requests.get(url, params={"topic": "fashion", "language": "en"},
+                     headers={"x-api-key": NEWS_API_KEY}).json()
 
-headers = {
-    "x-api-key": NEWS_API_KEY
-}
+articles = data.get("articles") or data.get("data", []) or []
 
-data = requests.get(url, params=params, headers=headers).json()
+# split into fake time windows
+mid = len(articles) // 2
+today = articles[:mid]
+yesterday = articles[mid:]
 
-articles = (
-    data.get("articles")
-    or data.get("data", [])
-    or data.get("results", [])
-)
-
-# combine text
-text = " ".join([
-    (a.get("title", "") + " " + a.get("description", "")).lower()
-    for a in articles
-    if isinstance(a, dict)
-])
-
-# base keywords
 keywords = [
     "streetwear", "luxury", "runway", "vintage",
     "sustainable", "minimalism", "aesthetic",
-    "gucci", "prada", "balenciaga", "dior", "nike"
+    "gucci", "prada", "balenciaga", "nike"
 ]
 
-# frequency count
-counts = Counter()
+def extract_counts(data_chunk):
+    text = " ".join([
+        (a.get("title", "") + " " + a.get("description", "")).lower()
+        for a in data_chunk if isinstance(a, dict)
+    ])
+    return {k: text.count(k) for k in keywords}
 
-for kw in keywords:
-    counts[kw] = text.count(kw)
+today_counts = extract_counts(today)
+yesterday_counts = extract_counts(yesterday)
 
-# -----------------------
-# TREND SCORE (upgrade)
-# -----------------------
-total_mentions = sum(counts.values()) or 1
+# velocity calculation
+trend = {}
 
-trend_scores = {
-    k: round((v / total_mentions) * 100, 2)
-    for k, v in counts.items()
-}
+for k in keywords:
+    t = today_counts.get(k, 0)
+    y = yesterday_counts.get(k, 0)
 
-# sort
-sorted_trends = dict(
-    sorted(trend_scores.items(), key=lambda x: x[1], reverse=True)
-)
+    if y == 0 and t > 0:
+        trend[k] = 100  # new trend spike
+    elif t == 0 and y > 0:
+        trend[k] = -100  # dying trend
+    else:
+        trend[k] = round(((t - y) / (y + 1)) * 100, 2)
 
-st.subheader("🔥 Emerging Fashion Trends (Score %)")
+# ---------------- UI ----------------
 
-st.bar_chart(sorted_trends)
+st.subheader("🔥 Trend Velocity (Up / Down)")
 
-st.write("### Trend Breakdown")
-st.dataframe(sorted_trends)
+for k, v in sorted(trend.items(), key=lambda x: x[1], reverse=True):
+    if v > 20:
+        st.write(f"📈 {k}: +{v}% (Rising)")
+    elif v < -20:
+        st.write(f"📉 {k}: {v}% (Declining)")
+    else:
+        st.write(f"➖ {k}: {v}% (Stable)")
