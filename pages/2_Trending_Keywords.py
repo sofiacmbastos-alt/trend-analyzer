@@ -19,7 +19,7 @@ keywords = [
     "louis vuitton", "versace", "armani", "fendi",
     "hermes", "givenchy", "burberry", "valentino",
     "saint laurent", "celine", "loewe", "bottega veneta",
-    "maison margiela", "balmain", "rick owens", "ralph lauren",
+    "maison margiela", "balmain", "rick owens", "ralph lauren", "isabel marant",
 
     # streetwear / hype
     "nike", "adidas", "puma", "reebok", "new balance",
