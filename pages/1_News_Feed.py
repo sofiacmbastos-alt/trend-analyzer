@@ -58,13 +58,22 @@ for a in articles:
         or ""
     )
 
-    st.subheader(title)
-
-    if source:
-        st.caption(source)
-
-    # only show summary if it actually exists
-    if summary:
-        st.write(summary)
-
-    st.divider()
+    # CARD UI
+    with st.container():
+        st.markdown(
+            f"""
+            <div style="
+                padding: 15px;
+                border-radius: 12px;
+                border: 1px solid #ddd;
+                margin-bottom: 12px;
+                background-color: #111;
+                color: white;
+            ">
+                <h4 style="margin-bottom:5px;">{title}</h4>
+                <p style="font-size:12px; color:gray;">{source}</p>
+                <p style="font-size:14px;">{summary}</p>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
