@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-st.title("DEBUG MODE")
+st.title("📰 Fashion News Feed")
 
 NEWS_API_KEY = st.secrets["NEWS_API_KEY"]
 
@@ -18,9 +18,49 @@ headers = {
 
 response = requests.get(url, params=params, headers=headers)
 
-st.write("Status:", response.status_code)
-
 data = response.json()
 
-st.write("FULL API RESPONSE:")
-st.write(data)
+# -----------------------
+# SMART ARTICLE EXTRACTOR
+# -----------------------
+articles = (
+    data.get("articles")
+    or data.get("data", {}).get("news")
+    or data.get("data")
+    or data.get("results")
+    or []
+)
+
+# -----------------------
+# CLEAN DATA
+# -----------------------
+clean_articles = []
+
+for a in articles:
+    if not isinstance(a, dict):
+        continue
+
+    title = a.get("title")
+
+    if not title or title.lower() == "null":
+        continue
+
+    clean_articles.append({
+        "title": title,
+        "summary": a.get("summary") or "No summary available",
+        "source": a.get("source") or "Unknown source"
+    })
+
+# -----------------------
+# UI
+# -----------------------
+st.write(f"Showing {len(clean_articles)} articles")
+
+if not clean_articles:
+    st.warning("No articles found — API structure may have changed.")
+else:
+    for article in clean_articles[:15]:
+        st.subheader(article["title"])
+        st.caption(article["source"])
+        st.write(article["summary"])
+        st.divider()
