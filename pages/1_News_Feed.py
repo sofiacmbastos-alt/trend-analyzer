@@ -40,27 +40,28 @@ for a in articles:
     if not isinstance(a, dict):
         continue
 
-    title = a.get("title")
+    title = a.get("title") or "No title"
 
-    if not title or title.lower() == "null":
+    # different APIs use different names
+    summary = (
+        a.get("summary")
+        or a.get("description")
+        or a.get("content")
+        or "No summary available"
+    )
+
+    source = (
+        a.get("source")
+        or a.get("source_name")
+        or a.get("publisher")
+        or "Unknown source"
+    )
+
+    # skip broken titles
+    if title.lower() == "null":
         continue
 
-    clean_articles.append({
-        "title": title,
-        "summary": a.get("summary") or "No summary available",
-        "source": a.get("source") or "Unknown source"
-    })
-
-# -----------------------
-# UI
-# -----------------------
-st.write(f"Showing {len(clean_articles)} articles")
-
-if not clean_articles:
-    st.warning("No articles found (check API response structure).")
-else:
-    for article in clean_articles[:15]:
-        st.subheader(article["title"])
-        st.caption(article["source"])
-        st.write(article["summary"])
-        st.divider()
+    st.subheader(title)
+    st.caption(f"Source: {source}")
+    st.write(summary)
+    st.divider()
