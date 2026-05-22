@@ -3,8 +3,14 @@ import requests
 
 st.title("📰 Fashion News Feed")
 
+# Load API key safely
 NEWS_API_KEY = st.secrets.get("NEWS_API_KEY")
 
+if not NEWS_API_KEY:
+    st.error("Missing NEWS_API_KEY in Streamlit secrets")
+    st.stop()
+
+# API request
 url = "https://api.freenewsapi.io/v1/news"
 
 params = {
@@ -18,19 +24,45 @@ headers = {
 
 response = requests.get(url, params=params, headers=headers)
 
-st.write("Status Code:", response.status_code)
+# Handle bad response
+if response.status_code != 200:
+    st.error(f"API error: {response.status_code}")
+    st.write(response.text)
+    st.stop()
 
 data = response.json()
 
-st.write("Raw Data Preview:", data)  # DEBUG
-
 articles = data.get("articles", [])
 
-st.write("Articles found:", len(articles))
+# -----------------------
+# CLEAN + FILTER ARTICLES
+# -----------------------
+clean_articles = []
 
-if not articles:
-    st.warning("No articles returned. Check API key or topic.")
+for a in articles:
+    title = a.get("title")
+
+    # skip broken entries
+    if not title or title.lower() == "null":
+        continue
+
+    clean_articles.append({
+        "title": title,
+        "summary": a.get("summary") or "No summary available",
+        "source": a.get("source") or "Unknown source"
+    })
+
+# Show result count
+st.write(f"Showing {len(clean_articles)} articles")
+
+# -----------------------
+# DISPLAY
+# -----------------------
+if not clean_articles:
+    st.warning("No valid articles found.")
 else:
-    for article in articles[:10]:
-        st.subheader(article.get("title", "No title"))
-        st.write(article.get("summary", ""))
+    for article in clean_articles[:15]:
+        st.subheader(article["title"])
+        st.caption(f"Source: {article['source']}")
+        st.write(article["summary"])
+        st.divider()
