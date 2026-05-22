@@ -14,11 +14,23 @@ data = requests.get(
 articles = data.get("articles") or data.get("data") or []
 
 keywords = [
-    "gucci", "prada", "balenciaga", "nike", "dior",
-    "streetwear", "luxury", "runway", "vintage",
-    "sustainable", "aesthetic"
-]
+    # luxury houses
+    "gucci", "prada", "dior", "chanel", "balenciaga",
+    "louis vuitton", "versace", "armani", "fendi",
+    "hermes", "givenchy", "burberry", "valentino",
+    "saint laurent", "celine", "loewe", "bottega veneta",
+    "maison margiela", "balmain", "rick owens",
 
+    # streetwear / hype
+    "nike", "adidas", "puma", "reebok", "new balance",
+    "supreme", "off-white", "stussy", "palace",
+    "bape", "a bathing ape", "fear of god", "essentials",
+    "kith", "carhartt wip", "stone island",
+
+    # high-fashion sportswear crossover
+    "yeezy", "jordan", "air jordan", "converse",
+    "on running", "asics", "salomon"
+]
 # -----------------------
 # DOCUMENT FREQUENCY (KEY FIX)
 # -----------------------
