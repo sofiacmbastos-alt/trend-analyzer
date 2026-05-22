@@ -42,7 +42,6 @@ for a in articles:
 
     title = a.get("title") or "No title"
 
-    # different APIs use different names
     summary = (
         a.get("summary")
         or a.get("description")
@@ -57,7 +56,6 @@ for a in articles:
         or "Unknown source"
     )
 
-    # skip broken titles
     if title.lower() == "null":
         continue
 
