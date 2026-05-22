@@ -17,22 +17,22 @@ headers = {
 }
 
 response = requests.get(url, params=params, headers=headers)
-
 data = response.json()
 
 # -----------------------
-# SMART ARTICLE EXTRACTOR
+# SAFE EXTRACTION
 # -----------------------
-articles = (
-    data.get("articles")
-    or data.get("data", {}).get("news")
-    or data.get("data")
-    or data.get("results")
-    or []
-)
+raw = data.get("data") or data.get("articles") or data.get("results")
+
+if isinstance(raw, dict):
+    articles = raw.get("news", []) or raw.get("articles", [])
+elif isinstance(raw, list):
+    articles = raw
+else:
+    articles = []
 
 # -----------------------
-# CLEAN DATA
+# CLEAN ARTICLES
 # -----------------------
 clean_articles = []
 
@@ -57,7 +57,7 @@ for a in articles:
 st.write(f"Showing {len(clean_articles)} articles")
 
 if not clean_articles:
-    st.warning("No articles found — API structure may have changed.")
+    st.warning("No articles found (check API response structure).")
 else:
     for article in clean_articles[:15]:
         st.subheader(article["title"])
