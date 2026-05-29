@@ -3,7 +3,7 @@ import requests
 import pandas as pd
 from datetime import datetime
 
-st.title("💎 Luxury Fashion Intelligence Dashboard")
+st.title("Luxury Fashion Intelligence Dashboard")
 
 # -----------------------
 # LOAD DATA
@@ -41,7 +41,7 @@ lux_scores = {
     for k, brands in luxury.items()
 }
 
-st.subheader("💎 Luxury Sub-Categories")
+st.subheader("Luxury Sub-Categories")
 st.bar_chart(lux_scores)
 
 # -----------------------
@@ -61,7 +61,7 @@ momentum = {
     for k, brands in houses.items()
 }
 
-st.subheader("📈 House Momentum")
+st.subheader("House Momentum")
 st.bar_chart(momentum)
 
 # -----------------------
@@ -99,7 +99,7 @@ cluster_scores = {
     for k, brands in clusters.items()
 }
 
-st.subheader("🏢 Fashion Conglomerates")
+st.subheader("Fashion Conglomerates")
 st.bar_chart(cluster_scores)
 
 df = pd.DataFrame({
@@ -112,7 +112,7 @@ st.dataframe(df)
 # -----------------------
 # 4. WEEKLY FASHION REPORT GENERATOR
 # -----------------------
-st.subheader("📅 Weekly Fashion Report")
+st.subheader("Weekly Fashion Report")
 
 total_articles = len(articles)
 
