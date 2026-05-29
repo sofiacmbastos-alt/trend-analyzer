@@ -1,4 +1,4 @@
 import streamlit as st
 
 st.title("ModeRN")
-st.write("Welcome to your fashion dashboard")
+st.write("Real-time fashion insights powered by data and AI.")
