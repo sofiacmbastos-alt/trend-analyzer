@@ -68,9 +68,31 @@ st.bar_chart(momentum)
 # 3. BRAND CLUSTERS
 # -----------------------
 clusters = {
-    "LVMH": ["louis vuitton", "dior", "fendi"],
-    "Kering": ["gucci", "balenciaga", "saint laurent", "bottega veneta"]
-}
+
+"LVMH": ["louis vuitton", "dior", "fendi", "celine", "loewe", "givenchy", "kenzo", "berluti", "rimowa", "loro piana", "emilio pucci", "marc jacobs", "patou", "fred", "bvlgari", "tag heuer", "hublot", "zenith", "tiffany & co"],
+
+"Kering": ["gucci", "saint laurent", "balenciaga", "bottega veneta", "mcqueen", "alexander mcqueen", "brioni", "boucheron", "pomellato", "qeelin", "ginori 1735"],
+
+"Richemont": ["cartier", "van cleef & arpels", "dunhill", "delvaux", "alaia", "chloe", "montblanc", "piaget", "vacheron constantin", "jaeger-lecoultre", "iwc", "panerai"],
+
+"Prada Group": ["prada", "miu miu", "churchs", "car shoe", "marchesi 1824"],
+
+"Chanel": ["chanel"],
+
+"Hermes": ["hermes"],
+
+"Capri Holdings": ["versace", "jimmy choo", "michael kors"],
+
+"OTB Group": ["maison margiela", "marni", "jil sander",
+"diesel"],
+
+"Tapestry": ["coach", "kate spade", "stuart weitzman"],
+
+"Moncler Group": ["moncler", "stone island"],
+
+"Independent Luxury": [ "rick owens", "comme des garcons", "yohji yamamoto", "issey miyake",
+"the row", "jacquemus", "tom ford", "valentino", "goyard", "brunello cucinelli", "zegna", "moynat", "launer london", "chrome hearts"]
+} 
 
 cluster_scores = {
     k: sum(text.count(b) for b in brands)
