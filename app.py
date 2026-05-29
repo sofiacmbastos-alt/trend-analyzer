@@ -1,4 +1,4 @@
 import streamlit as st
 
-st.title("AI Fashion Trend Terminal")
+st.title("ModeRN")
 st.write("Welcome to your fashion dashboard")
