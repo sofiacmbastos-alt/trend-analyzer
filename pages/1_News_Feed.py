@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-st.title("📰 Fashion News Feed")
+st.title("ModeRN")
 
 NEWS_API_KEY = st.secrets["NEWS_API_KEY"]
 
