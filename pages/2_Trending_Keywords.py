@@ -145,7 +145,7 @@ report = f"""
 
 ---
 
-### 📌 Analyst Note
+### 📌 Note from the developers
 This report is generated from live fashion news signals and reflects media attention distribution rather than sales performance.
 """
 
