@@ -180,7 +180,7 @@ top_trend = Counter(words).most_common(1)[0][0].title()
 
 st.markdown("""
 <div class="main-title">
-FASHION INTELLIGENCE
+ModeRN
 </div>
 
 <div class="subtitle">
