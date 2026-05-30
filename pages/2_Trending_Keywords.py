@@ -5,6 +5,56 @@ import re
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 
+st.set_page_config(
+    page_title="Trend Insights",
+    layout="wide"
+)
+
+st.markdown("""
+<style>
+
+.stApp {
+    background-color: #F7F2E9;
+}
+
+.page-title {
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: 4px;
+    text-align: center;
+    color: #111111;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-family: Georgia, serif;
+}
+
+.page-subtitle {
+    text-align: center;
+    color: #7A7268;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: #111111;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-family: Georgia, serif;
+}
+
+.keyword-card {
+    background: rgba(255,255,255,0.85);
+    border: 1px solid #E5DDD0;
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 3px 12px rgba(0,0,0,.04);
+}
+
+</style>
+""", unsafe_allow_html=True)
+
 df = pd.read_csv("fashion_news.csv")
 
 all_text = (
@@ -52,18 +102,32 @@ top_words = Counter(words).most_common(20)
 
 st.subheader("Most Mentioned Keywords")
 
-st.dataframe(
-    pd.DataFrame(
-        top_words,
-        columns=["Keyword", "Mentions"]
-    )
+st.markdown(
+    '<div class="section-title">Top Keywords</div>',
+    unsafe_allow_html=True
 )
+
+cols = st.columns(2)
+
+for i, (word, count) in enumerate(top_words[:8]):
+
+    with cols[i % 4]:
+
+        with st.container(border=True):
+
+            st.metric(
+                label=word.title(),
+                value=count
+            )
 
 # ----------------------
 # WORD CLOUD
 # ----------------------
 
-st.subheader("Fashion Vocabulary Cloud")
+st.markdown(
+    '<div class="section-title">Fashion Vocabulary Cloud</div>',
+    unsafe_allow_html=True
+)
 
 def custom_color_func(*args, **kwargs):
     colors = [
