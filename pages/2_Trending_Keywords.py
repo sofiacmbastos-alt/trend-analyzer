@@ -75,6 +75,8 @@ def custom_color_func(*args, **kwargs):
     import random
     return random.choice(colors)
 
+text_for_cloud = " ".join(words)
+
 wordcloud = WordCloud(
     width=1200,
     height=600,
