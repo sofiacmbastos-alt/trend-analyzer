@@ -9,12 +9,108 @@ st.set_page_config(
 )
 
 # ----------------------
+# STYLING
+# ----------------------
+
+st.markdown("""
+<style>
+
+.stApp {
+    background-color: #F7F2E9;
+}
+
+.main-title {
+    font-size: 4rem;
+    font-weight: 300;
+    letter-spacing: 5px;
+    text-align: center;
+    color: #111111;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-family: Georgia, serif;
+}
+
+.subtitle {
+    text-align: center;
+    color: #7A7268;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+}
+
+.metric-card {
+    background: rgba(255,255,255,0.7);
+    border: 1px solid #E5DDD0;
+    border-radius: 18px;
+    padding: 25px;
+    text-align: center;
+    min-height: 140px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+}
+
+.metric-label {
+    color: #7A7268;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.metric-value {
+    margin-top: 18px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #111111;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #111111;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    font-family: Georgia, serif;
+}
+
+.analysis-card {
+    background: white;
+    border-radius: 18px;
+    border: 1px solid #E5DDD0;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.article-card {
+    background: white;
+    border-radius: 18px;
+    border: 1px solid #E5DDD0;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.article-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #111111;
+}
+
+.article-source {
+    color: #8C857D;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+</style>
+""", unsafe_allow_html=True)
+
+# ----------------------
 # LOAD DATA
 # ----------------------
+
 df = pd.read_csv("fashion_news.csv")
 
 # ----------------------
-# SIMPLE TREND EXTRACTION
+# TREND EXTRACTION
 # ----------------------
 
 all_text = (
@@ -24,14 +120,12 @@ all_text = (
 
 text = " ".join(all_text)
 
-# Colors
 colors = [
-    "red", "blue", "green", "black",
-    "white", "pink", "yellow",
-    "brown", "beige", "orange"
+    "red","blue","green","black",
+    "white","pink","yellow",
+    "brown","beige","orange"
 ]
 
-# Styles
 styles = [
     "minimalist",
     "minimalism",
@@ -44,7 +138,6 @@ styles = [
     "elegant"
 ]
 
-# Celebrities
 celebrities = [
     "billie eilish",
     "cara delevingne",
@@ -53,7 +146,6 @@ celebrities = [
     "hailey bieber"
 ]
 
-# Brands
 brands = [
     "balenciaga",
     "gucci",
@@ -67,12 +159,16 @@ brands = [
 ]
 
 def most_mentioned(items):
+
     counts = {
         item: text.count(item.lower())
         for item in items
     }
 
-    counts = {k:v for k,v in counts.items() if v > 0}
+    counts = {
+        k:v for k,v in counts.items()
+        if v > 0
+    }
 
     if counts:
         return max(counts, key=counts.get)
@@ -84,16 +180,19 @@ top_style = most_mentioned(styles)
 top_brand = most_mentioned(brands)
 top_celeb = most_mentioned(celebrities)
 
-# Most common word
 words = re.findall(r'\b[a-z]+\b', text)
 
 stop_words = {
     "the","and","for","with","that",
-    "this","from","have","your","about",
-    "into","their","they","will","fashion"
+    "this","from","have","your",
+    "about","into","their","they",
+    "will","fashion"
 }
 
-words = [w for w in words if w not in stop_words and len(w) > 4]
+words = [
+    w for w in words
+    if w not in stop_words and len(w) > 4
+]
 
 top_trend = Counter(words).most_common(1)[0][0].title()
 
@@ -101,58 +200,97 @@ top_trend = Counter(words).most_common(1)[0][0].title()
 # HEADER
 # ----------------------
 
-st.title("👗 Fashion Intelligence Dashboard")
+st.markdown("""
+<div class="main-title">
+FASHION INTELLIGENCE
+</div>
+
+<div class="subtitle">
+TREND FORECASTING • BRAND MONITORING • CULTURAL SIGNALS
+</div>
+""", unsafe_allow_html=True)
 
 # ----------------------
-# KPI CARDS
+# TREND CARDS
 # ----------------------
 
-col1, col2, col3 = st.columns(3)
+cards = [
+    ("🔥 Top Trend", top_trend),
+    ("🏆 Brand Leader", top_brand.title()),
+    ("⭐ Influencer", top_celeb.title()),
+    ("🎨 Color Trend", top_color.title()),
+    ("👗 Style Trend", top_style.title())
+]
 
-with col1:
-    st.metric("🔥 Top Trend", top_trend)
+cols = st.columns(5)
 
-with col2:
-    st.metric("🏆 Most Mentioned Brand", top_brand.title())
+for col, (label, value) in zip(cols, cards):
 
-with col3:
-    st.metric("⭐ Most Influential Celebrity", top_celeb.title())
+    with col:
 
-col4, col5 = st.columns(2)
+        st.markdown(
+            f"""
+            <div class="metric-card">
+                <div class="metric-label">
+                    {label}
+                </div>
 
-with col4:
-    st.metric("🎨 Trending Color", top_color.title())
-
-with col5:
-    st.metric("👗 Trending Style", top_style.title())
+                <div class="metric-value">
+                    {value}
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
 
 # ----------------------
-# AI ANALYSIS
+# ANALYSIS
 # ----------------------
 
-st.subheader("📊 Trend Analysis")
+st.markdown(
+    '<div class="section-title">Trend Analysis</div>',
+    unsafe_allow_html=True
+)
 
-st.info(
+st.markdown(
     f"""
-Current fashion coverage suggests growing interest around **{top_trend}**.
+    <div class="analysis-card">
 
-The most discussed brand is **{top_brand.title()}** while
-**{top_celeb.title()}** appears as the strongest celebrity influence.
+    Current fashion coverage suggests growing momentum around
+    <b>{top_trend}</b>.
 
-Color trends are leaning toward **{top_color.title()}**
-and style conversations are centered around
-**{top_style.title()}**.
+    <br><br>
 
-These insights were generated automatically from the latest
-fashion news articles.
-"""
+    <b>{top_brand.title()}</b> is currently the most visible
+    fashion brand in media coverage while
+    <b>{top_celeb.title()}</b> remains the strongest
+    celebrity influence.
+
+    <br><br>
+
+    Color discussions are dominated by
+    <b>{top_color.title()}</b> while style narratives
+    continue to center around
+    <b>{top_style.title()}</b> aesthetics.
+
+    <br><br>
+
+    These insights were automatically generated
+    from the latest fashion media coverage.
+
+    </div>
+    """,
+    unsafe_allow_html=True
 )
 
 # ----------------------
 # ARTICLES
 # ----------------------
 
-st.subheader("📰 Latest Articles")
+st.markdown(
+    '<div class="section-title">Latest Articles</div>',
+    unsafe_allow_html=True
+)
 
 cols = st.columns(2)
 
@@ -160,20 +298,29 @@ for i, (_, row) in enumerate(df.iterrows()):
 
     with cols[i % 2]:
 
-        with st.container(border=True):
+        st.markdown(
+            f"""
+            <div class="article-card">
 
-            st.markdown(
-                f"### {row['titulo']}"
-            )
+                <div class="article-title">
+                    {row['titulo']}
+                </div>
 
-            st.caption(
-                f"📰 {row['fonte']}"
-            )
+                <div class="article-source">
+                    {row['fonte']}
+                </div>
 
-            st.write(row["resumo"])
+                <div>
+                    {row['resumo']}
+                </div>
 
-            st.link_button(
-                "Read Article",
-                row["link"],
-                use_container_width=True
-            )
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
+        st.link_button(
+            "Read Article",
+            row["link"],
+            use_container_width=True
+        )
