@@ -247,21 +247,6 @@ Emerging Luxury Signals
 </div>
 """, unsafe_allow_html=True)
 
-# Text underneath the image
-st.markdown("""
-<div class="hero-text">
-
-<div class="hero-title">
-SPRING / SUMMER 2026
-</div>
-
-<div class="hero-subtitle">
-Emerging Luxury Signals
-</div>
-
-</div>
-""", unsafe_allow_html=True)
-
 # ----------------------
 # TREND CARDS
 # ----------------------
