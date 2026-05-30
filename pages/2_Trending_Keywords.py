@@ -111,7 +111,7 @@ cols = st.columns(2)
 
 for i, (word, count) in enumerate(top_words[:8]):
 
-    with cols[i % 4]:
+    with cols[i % 2]:
 
         with st.container(border=True):
 
