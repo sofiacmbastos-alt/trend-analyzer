@@ -4,7 +4,7 @@ from collections import Counter
 import re
 
 st.set_page_config(
-    page_title="Fashion Intelligence Dashboard",
+    page_title="ModeRN",
     layout="wide"
 )
 
