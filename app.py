@@ -222,27 +222,17 @@ st.image(
     use_container_width=True
 )
 
+# Text underneath the image
 st.markdown("""
-<div style="
-    text-align:center;
-    margin-top:-80px;
-    margin-bottom:80px;
-    color:white;
-">
+<div class="hero-text">
 
-<h1 style="
-    font-family:Georgia, serif;
-    letter-spacing:4px;
-">
+<div class="hero-title">
 SPRING / SUMMER 2026
-</h1>
+</div>
 
-<p style="
-    letter-spacing:3px;
-    text-transform:uppercase;
-">
+<div class="hero-subtitle">
 Emerging Luxury Signals
-</p>
+</div>
 
 </div>
 """, unsafe_allow_html=True)
