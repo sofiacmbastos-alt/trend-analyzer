@@ -203,23 +203,23 @@ SPRING / SUMMER 2026 • TREND FORECASTING • CULTURAL SIGNALS
 row1 = st.columns(3)
 
 with row1[0]:
-    st.metric("🔥 Top Trend", top_trend)
+    st.metric("TOP TREND", top_trend)
 
 with row1[1]:
-    st.metric("🏆 Brand Leader", top_brand.title())
+    st.metric("BRAND LEADER", top_brand.title())
 
 with row1[2]:
-    st.metric("⭐ Cultural Icon", top_celeb.title())
+    st.metric("CULTURAL ICON", top_celeb.title())
 
 st.markdown("<br>", unsafe_allow_html=True)
 
 row2 = st.columns(2)
 
 with row2[0]:
-    st.metric("🎨 Color Trend", top_color.title())
+    st.metric("COLOR TREND", top_color.title())
 
 with row2[1]:
-    st.metric("👗 Style Trend", top_style.title())
+    st.metric("STYLE TREND", top_style.title())
 # ----------------------
 # ANALYSIS
 # ----------------------
