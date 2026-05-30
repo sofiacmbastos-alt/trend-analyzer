@@ -218,7 +218,7 @@ SPRING / SUMMER 2026 • TREND FORECASTING • CULTURAL SIGNALS
 # HERO IMAGE
 
 st.image(
-    "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f",
+    "hero.jpg",
     use_container_width=True
 )
 
