@@ -152,20 +152,6 @@ for i, (word, count) in enumerate(top_words[:8]):
                 value=count
             )
 
-st.markdown(
-    '<div class="section-title">Keyword Momentum</div>',
-    unsafe_allow_html=True
-)
-
-keyword_df = pd.DataFrame(
-    top_words[:10],
-    columns=["Keyword", "Mentions"]
-)
-
-st.bar_chart(
-    keyword_df.set_index("Keyword")
-)
-
 # ----------------------
 # WORD CLOUD
 # ----------------------
