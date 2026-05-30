@@ -10,19 +10,23 @@ st.title("👗 Fashion Intelligence Dashboard")
 
 df = pd.read_csv("fashion_news.csv")
 
-for _, row in df.iterrows():
+cols = st.columns(2)
 
-    with st.container(border=True):
+for i, (_, row) in enumerate(df.iterrows()):
 
-        st.subheader(row["titulo"])
+    with cols[i % 2]:
+        with st.container(border=True):
 
-        st.caption(f"📰 {row['fonte']}")
+            st.subheader(row["titulo"])
 
-        st.write(row["resumo"])
+            st.markdown(
+                f"**Fonte:** {row['fonte']}"
+            )
 
-        st.link_button(
-            "🔗 Ler matéria completa",
-            row["link"]
-        )
+            st.write(row["resumo"])
 
-        st.divider()
+            st.link_button(
+                "Ler mais",
+                row["link"],
+                use_container_width=True
+            )
