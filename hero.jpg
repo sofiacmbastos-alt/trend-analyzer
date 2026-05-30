@@ -1,4 +1,0 @@
-st.image(
-    "IMG_6586.JPG",
-    use_container_width=True
-)
