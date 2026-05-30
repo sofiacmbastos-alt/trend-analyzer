@@ -19,7 +19,7 @@ words = re.findall(r'\b[a-z]+\b', text)
 stop_words = {
      "the","and","for","with","that","this","from","p","s",
     "have","your","about","into","their","they","trend","week","everyone","now","see",
-    "will","been","were","being","after","before",
+    "will","been","were","being","after","before","dress","dresses","whether","ahead",
     "over","under","while","where","which","when",
     "what","than","then","also","more","most","fashion","style","styles","trend","trends",
     "brand","brands","designer","designers",
