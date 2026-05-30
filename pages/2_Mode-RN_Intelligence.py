@@ -65,7 +65,7 @@ all_text = (
 text = " ".join(all_text)
 
 st.image(
-    "IMG_6590.JPG",
+    "IMG_6592.jpg",
     use_container_width=True
 )
 
