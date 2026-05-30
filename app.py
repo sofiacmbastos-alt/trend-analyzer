@@ -205,22 +205,23 @@ cols = st.columns(5)
 for col, (label, value) in zip(cols, cards):
 
     with col:
+        with st.container(border=True):
 
-        st.markdown(
-            f"""
-            <div class="metric-card">
-                <div class="metric-label">
-                    {label}
-                </div>
+            st.caption(label)
 
-                <div class="metric-value">
-                    {value}
-                </div>
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
-
+            st.markdown(
+                f"""
+                <h2 style="
+                    text-align:center;
+                    margin-top:15px;
+                    margin-bottom:10px;
+                    color:#111111;
+                ">
+                {value}
+                </h2>
+                """,
+                unsafe_allow_html=True
+            )
 # ----------------------
 # ANALYSIS
 # ----------------------
@@ -270,18 +271,15 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Style Streamlit containers to look luxury
-st.markdown("""
-<style>
+/* Luxury cards */
+
 [data-testid="stVerticalBlockBorderWrapper"] {
-    background: white;
+    background: rgba(255,255,255,0.85);
     border: 1px solid #E5DDD0 !important;
     border-radius: 18px !important;
-    padding: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    box-shadow: 0 3px 12px rgba(0,0,0,.04);
+    padding: 8px;
 }
-</style>
-""", unsafe_allow_html=True)
 
 cols = st.columns(2)
 
