@@ -3,8 +3,10 @@ import pandas as pd
 
 # Fontes de notícias (RSS)
 feeds = [
-    ("Vogue Business", "https://www.voguebusiness.com/feed"),
-    ("Hypebeast", "https://hypebeast.com/feed"),
+    ("Vogue", "https://www.vogue.com/"),
+    ("Elle", "https://www.elle.com/"),
+    ("I-d", "https://i-d.co/"),
+    ("Harper's Bazaar", "https://www.harpersbazaar.com/")
 ]
 
 dados = []
