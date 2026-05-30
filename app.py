@@ -46,6 +46,25 @@ st.markdown("""
     margin-bottom: 60px;
 }
 
+.hero-text {
+    text-align:center;
+    margin-top:25px;
+    margin-bottom:60px;
+}
+
+.hero-title {
+    font-size:2.5rem;
+    letter-spacing:4px;
+    font-family:Georgia, serif;
+    color:#111111;
+}
+
+.hero-subtitle {
+    text-transform:uppercase;
+    letter-spacing:3px;
+    color:#7A7268;
+}
+
 .metric-card {
     background: rgba(255,255,255,0.7);
     border: 1px solid #E5DDD0;
@@ -224,6 +243,21 @@ SPRING / SUMMER 2026
 ">
 Emerging Luxury Signals
 </p>
+
+</div>
+""", unsafe_allow_html=True)
+
+# Text underneath the image
+st.markdown("""
+<div class="hero-text">
+
+<div class="hero-title">
+SPRING / SUMMER 2026
+</div>
+
+<div class="hero-subtitle">
+Emerging Luxury Signals
+</div>
 
 </div>
 """, unsafe_allow_html=True)
