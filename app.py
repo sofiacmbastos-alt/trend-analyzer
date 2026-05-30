@@ -271,8 +271,9 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-/* Luxury cards */
-
+# Make Streamlit containers look like luxury cards
+st.markdown("""
+<style>
 [data-testid="stVerticalBlockBorderWrapper"] {
     background: rgba(255,255,255,0.85);
     border: 1px solid #E5DDD0 !important;
@@ -280,6 +281,8 @@ st.markdown(
     box-shadow: 0 3px 12px rgba(0,0,0,.04);
     padding: 8px;
 }
+</style>
+""", unsafe_allow_html=True)
 
 cols = st.columns(2)
 
@@ -289,11 +292,7 @@ for i, (_, row) in enumerate(df.iterrows()):
 
         with st.container(border=True):
 
-            st.markdown(
-                f"""
-                ### {row['titulo']}
-                """
-            )
+            st.markdown(f"### {row['titulo']}")
 
             st.caption(f"📰 {row['fonte']}")
 
