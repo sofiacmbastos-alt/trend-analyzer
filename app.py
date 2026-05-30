@@ -193,11 +193,11 @@ SPRING / SUMMER 2026 • TREND FORECASTING • CULTURAL SIGNALS
 # ----------------------
 
 cards = [
-    ("🔥 Top Trend", top_trend),
-    ("🏆 Brand Leader", top_brand.title()),
-    ("⭐ Influencer", top_celeb.title()),
-    ("🎨 Color Trend", top_color.title()),
-    ("👗 Style Trend", top_style.title())
+    ("🔥 TOP TREND", top_trend),
+    ("🏆 BRAND LEADER", top_brand.title()),
+    ("⭐ CULTURAL ICON", top_celeb.title()),
+    ("🎨 COLOR TREND", top_color.title()),
+    ("👗 STYLE TREND", top_style.title())
 ]
 
 cols = st.columns(5)
@@ -205,20 +205,32 @@ cols = st.columns(5)
 for col, (label, value) in zip(cols, cards):
 
     with col:
-        with st.container(border=True):
 
-            st.caption(label)
+        with st.container(border=True):
 
             st.markdown(
                 f"""
-                <h2 style="
-                    text-align:center;
-                    margin-top:15px;
-                    margin-bottom:10px;
-                    color:#111111;
-                ">
-                {value}
-                </h2>
+                <div style="text-align:center;padding:10px 5px;">
+                    <div style="
+                        font-size:0.75rem;
+                        letter-spacing:2px;
+                        color:#8B8176;
+                        margin-bottom:18px;
+                        text-transform:uppercase;
+                    ">
+                        {label}
+                    </div>
+
+                    <div style="
+                        font-size:1.8rem;
+                        font-weight:600;
+                        color:#111111;
+                        line-height:1.2;
+                        font-family:Georgia,serif;
+                    ">
+                        {value}
+                    </div>
+                </div>
                 """,
                 unsafe_allow_html=True
             )
