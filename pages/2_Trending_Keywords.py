@@ -17,12 +17,39 @@ text = " ".join(all_text)
 words = re.findall(r'\b[a-z]+\b', text)
 
 stop_words = {
-    "the","and","for","with","that",
-    "this","from","have","your",
-    "about","into","their","they",
-    "will","fashion","collection",
-    "designer","season","show",
-    "latest","brand","brands"
+     "the","and","for","with","that","this","from",
+    "have","your","about","into","their","they",
+    "will","been","were","being","after","before",
+    "over","under","while","where","which","when",
+    "what","than","then","also","more","most","fashion","style","styles","trend","trends",
+    "brand","brands","designer","designers",
+    "collection","collections",
+    "season","seasons",
+    "show","shows",
+    "runway","week",
+    "spring","summer","fall","winter",
+    "look","looks",
+    "wear","wearing","wears",
+    "latest","new","news",
+    "launch","launched",
+    "creative","director",
+    "campaign","campaigns",
+    "industry","market",
+    "retail","retailer",
+    "luxury",
+    "beauty",
+    "global",
+    "said","says","according",
+    "including","include",
+    "featuring","feature",
+    "first","today","year",
+    "years","time","times",
+    "could","would","should",
+    "many","much","make","made",
+    "like","just","still","even",
+    "vogue","elle","bazaar",
+    "wwd","business","magazine",
+    "editor","editors"
 }
 
 words = [w for w in words if w not in stop_words and len(w) > 4]
