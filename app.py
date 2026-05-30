@@ -196,6 +196,38 @@ SPRING / SUMMER 2026 • TREND FORECASTING • CULTURAL SIGNALS
 </div>
 """, unsafe_allow_html=True)
 
+# HERO IMAGE
+
+st.image(
+    "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f",
+    use_container_width=True
+)
+
+st.markdown("""
+<div style="
+    text-align:center;
+    margin-top:-80px;
+    margin-bottom:80px;
+    color:white;
+">
+
+<h1 style="
+    font-family:Georgia, serif;
+    letter-spacing:4px;
+">
+SPRING / SUMMER 2026
+</h1>
+
+<p style="
+    letter-spacing:3px;
+    text-transform:uppercase;
+">
+Emerging Luxury Signals
+</p>
+
+</div>
+""", unsafe_allow_html=True)
+
 # ----------------------
 # TREND CARDS
 # ----------------------
