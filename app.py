@@ -78,28 +78,6 @@ st.markdown("""
     margin-bottom: 30px;
 }
 
-.article-card {
-    background: white;
-    border-radius: 18px;
-    border: 1px solid #E5DDD0;
-    padding: 25px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-}
-
-.article-title {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #111111;
-}
-
-.article-source {
-    color: #8C857D;
-    margin-top: 8px;
-    margin-bottom: 15px;
-    font-size: 0.9rem;
-}
-
 </style>
 """, unsafe_allow_html=True)
 
@@ -292,35 +270,39 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+# Style Streamlit containers to look luxury
+st.markdown("""
+<style>
+[data-testid="stVerticalBlockBorderWrapper"] {
+    background: white;
+    border: 1px solid #E5DDD0 !important;
+    border-radius: 18px !important;
+    padding: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+</style>
+""", unsafe_allow_html=True)
+
 cols = st.columns(2)
 
 for i, (_, row) in enumerate(df.iterrows()):
 
     with cols[i % 2]:
 
-        st.markdown(
-            f"""
-            <div class="article-card">
+        with st.container(border=True):
 
-                <div class="article-title">
-                    {row['titulo']}
-                </div>
+            st.markdown(
+                f"""
+                ### {row['titulo']}
+                """
+            )
 
-                <div class="article-source">
-                    {row['fonte']}
-                </div>
+            st.caption(f"📰 {row['fonte']}")
 
-                <div>
-                    {row['resumo']}
-                </div>
+            st.write(row["resumo"])
 
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
-
-        st.link_button(
-            "Read Article",
-            row["link"],
-            use_container_width=True
-        )
+            st.link_button(
+                "Read Article",
+                row["link"],
+                use_container_width=True
+            )
