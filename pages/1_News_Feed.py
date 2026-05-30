@@ -1,79 +1,179 @@
 import streamlit as st
-import requests
+import pandas as pd
+from collections import Counter
+import re
 
-st.title("Fashion News")
+st.set_page_config(
+    page_title="Fashion Intelligence Dashboard",
+    layout="wide"
+)
 
-NEWS_API_KEY = st.secrets["NEWS_API_KEY"]
+# ----------------------
+# LOAD DATA
+# ----------------------
+df = pd.read_csv("fashion_news.csv")
 
-url = "https://api.freenewsapi.io/v1/news"
+# ----------------------
+# SIMPLE TREND EXTRACTION
+# ----------------------
 
-params = {
-    "topic": "fashion",
-    "language": "en"
+all_text = (
+    df["titulo"].fillna("") + " " +
+    df["resumo"].fillna("")
+).str.lower()
+
+text = " ".join(all_text)
+
+# Colors
+colors = [
+    "red", "blue", "green", "black",
+    "white", "pink", "yellow",
+    "brown", "beige", "orange"
+]
+
+# Styles
+styles = [
+    "minimalist",
+    "minimalism",
+    "streetwear",
+    "vintage",
+    "summer",
+    "boho",
+    "luxury",
+    "casual",
+    "elegant"
+]
+
+# Celebrities
+celebrities = [
+    "billie eilish",
+    "cara delevingne",
+    "bella hadid",
+    "kendall jenner",
+    "hailey bieber"
+]
+
+# Brands
+brands = [
+    "balenciaga",
+    "gucci",
+    "prada",
+    "dior",
+    "chanel",
+    "zara",
+    "h&m",
+    "versace",
+    "louis vuitton"
+]
+
+def most_mentioned(items):
+    counts = {
+        item: text.count(item.lower())
+        for item in items
+    }
+
+    counts = {k:v for k,v in counts.items() if v > 0}
+
+    if counts:
+        return max(counts, key=counts.get)
+
+    return "N/A"
+
+top_color = most_mentioned(colors)
+top_style = most_mentioned(styles)
+top_brand = most_mentioned(brands)
+top_celeb = most_mentioned(celebrities)
+
+# Most common word
+words = re.findall(r'\b[a-z]+\b', text)
+
+stop_words = {
+    "the","and","for","with","that",
+    "this","from","have","your","about",
+    "into","their","they","will","fashion"
 }
 
-headers = {
-    "x-api-key": NEWS_API_KEY
-}
+words = [w for w in words if w not in stop_words and len(w) > 4]
 
-response = requests.get(url, params=params, headers=headers)
-data = response.json()
+top_trend = Counter(words).most_common(1)[0][0].title()
 
-# -----------------------
-# SAFE EXTRACTION
-# -----------------------
-raw = data.get("data") or data.get("articles") or data.get("results")
+# ----------------------
+# HEADER
+# ----------------------
 
-if isinstance(raw, dict):
-    articles = raw.get("news", []) or raw.get("articles", [])
-elif isinstance(raw, list):
-    articles = raw
-else:
-    articles = []
+st.title("👗 Fashion Intelligence Dashboard")
 
-# -----------------------
-# CLEAN ARTICLES
-# -----------------------
-clean_articles = []
+# ----------------------
+# KPI CARDS
+# ----------------------
 
-for a in articles:
-    if not isinstance(a, dict):
-        continue
+col1, col2, col3 = st.columns(3)
 
-    title = a.get("title")
+with col1:
+    st.metric("🔥 Top Trend", top_trend)
 
-    if not title or title.lower() == "null":
-        continue
+with col2:
+    st.metric("🏆 Most Mentioned Brand", top_brand.title())
 
-    source = (
-        a.get("source")
-        or a.get("source_name")
-        or a.get("publisher")
-        or ""
-    )
+with col3:
+    st.metric("⭐ Most Influential Celebrity", top_celeb.title())
 
-    summary = (
-        a.get("description")
-        or a.get("content")
-        or ""
-    )
+col4, col5 = st.columns(2)
 
-    # CARD UI
-    with st.container():
-        st.markdown(
-            f"""
-            <div style="
-                padding: 15px;
-                border-radius: 12px;
-                border: 1px solid #ddd;
-                margin-bottom: 12px;
-                background-color: #111;
-                color: white;
-            ">
-                <h4 style="margin-bottom:5px;">{title}</h4>
-                <p style="font-size:12px; color:gray;">{source}</p>
-                <p style="font-size:14px;">{summary}</p>
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
+with col4:
+    st.metric("🎨 Trending Color", top_color.title())
+
+with col5:
+    st.metric("👗 Trending Style", top_style.title())
+
+# ----------------------
+# AI ANALYSIS
+# ----------------------
+
+st.subheader("📊 Trend Analysis")
+
+st.info(
+    f"""
+Current fashion coverage suggests growing interest around **{top_trend}**.
+
+The most discussed brand is **{top_brand.title()}** while
+**{top_celeb.title()}** appears as the strongest celebrity influence.
+
+Color trends are leaning toward **{top_color.title()}**
+and style conversations are centered around
+**{top_style.title()}**.
+
+These insights were generated automatically from the latest
+fashion news articles.
+"""
+)
+
+# ----------------------
+# ARTICLES
+# ----------------------
+
+st.subheader("📰 Latest Articles")
+
+cols = st.columns(2)
+
+for i, (_, row) in enumerate(df.iterrows()):
+
+    with cols[i % 2]:
+
+        with st.container(border=True):
+
+            st.markdown(
+                f"### {row['titulo']}"
+            )
+
+            st.caption(
+                f"📰 {row['fonte']}"
+            )
+
+            st.write(row["resumo"])
+
+            st.link_button(
+                "Read Article",
+                row["link"],
+                use_container_width=True
+            )
