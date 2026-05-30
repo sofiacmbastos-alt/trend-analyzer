@@ -64,6 +64,21 @@ all_text = (
 
 text = " ".join(all_text)
 
+st.image(
+    "IMG_6586.JPG",
+    use_container_width=True
+)
+
+st.markdown("""
+<div class="page-title">
+MODE-RN INTELLIGENCE
+</div>
+
+<div class="page-subtitle">
+Keyword Intelligence • Media Signals • Trend Forecasting
+</div>
+""", unsafe_allow_html=True)
+
 words = re.findall(r'\b[a-z]+\b', text)
 
 stop_words = {
@@ -100,8 +115,25 @@ words = [w for w in words if w not in stop_words and len(w) > 4]
 
 top_words = Counter(words).most_common(20)
 
-st.subheader("Most Mentioned Keywords")
+st.markdown(
+    '<div class="section-title">Market Pulse</div>',
+    unsafe_allow_html=True
+)
 
+pulse = st.columns(4)
+
+with pulse[0]:
+    st.metric("Articles", len(df))
+
+with pulse[1]:
+    st.metric("Keywords", len(set(words)))
+
+with pulse[2]:
+    st.metric("Top Signal", top_words[0][0].title())
+
+with pulse[3]:
+    st.metric("Mentions", top_words[0][1])
+    
 st.markdown(
     '<div class="section-title">Top Keywords</div>',
     unsafe_allow_html=True
@@ -119,6 +151,20 @@ for i, (word, count) in enumerate(top_words[:8]):
                 label=word.title(),
                 value=count
             )
+
+st.markdown(
+    '<div class="section-title">Keyword Momentum</div>',
+    unsafe_allow_html=True
+)
+
+keyword_df = pd.DataFrame(
+    top_words[:10],
+    columns=["Keyword", "Mentions"]
+)
+
+st.bar_chart(
+    keyword_df.set_index("Keyword")
+)
 
 # ----------------------
 # WORD CLOUD
@@ -155,4 +201,31 @@ fig, ax = plt.subplots(figsize=(12, 6))
 ax.imshow(wordcloud, interpolation="bilinear")
 ax.axis("off")
 
-st.pyplot(fig)
+with st.container(border=True):
+    st.pyplot(fig)
+
+st.markdown(
+    '<div class="section-title">Emerging Signals</div>',
+    unsafe_allow_html=True
+)
+
+signals = top_words[:5]
+
+for word, count in signals:
+
+    st.success(
+        f"{word.title()} • {count} mentions"
+    )
+
+st.markdown(
+    '<div class="section-title">Source Analysis</div>',
+    unsafe_allow_html=True
+)
+
+source_counts = (
+    df["fonte"]
+    .value_counts()
+    .head(10)
+)
+
+st.bar_chart(source_counts)
