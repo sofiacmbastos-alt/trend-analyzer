@@ -65,12 +65,24 @@ st.dataframe(
 
 st.subheader("Fashion Vocabulary Cloud")
 
+def custom_color_func(*args, **kwargs):
+    colors = [
+        "#111111",  # black
+        "#6E6259",  # taupe
+        "#A89B8C",  # beige
+        "#8B7355",  # warm brown
+    ]
+    import random
+    return random.choice(colors)
+
 wordcloud = WordCloud(
     width=1200,
     height=600,
-    background_color="white",
+    background_color="#F7F2E9",
     collocations=False
-).generate(text)
+).generate(text_for_cloud)
+
+wordcloud.recolor(color_func=custom_color_func)
 
 fig, ax = plt.subplots(figsize=(12, 6))
 
