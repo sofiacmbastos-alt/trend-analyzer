@@ -17,7 +17,7 @@ text = " ".join(all_text)
 words = re.findall(r'\b[a-z]+\b', text)
 
 stop_words = {
-     "the","and","for","with","that","this","from","p","s",
+     "the","and","for","with","that","this","from","p","s","these",
     "have","your","about","into","their","they","trend","week","everyone","now","see",
     "will","been","were","being","after","before","dress","dresses","whether","ahead",
     "over","under","while","where","which","when",
