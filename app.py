@@ -301,4 +301,3 @@ for i, (_, row) in enumerate(df.iterrows()):
                 row["link"],
                 use_container_width=True
             )
-            st.subheader(value)
