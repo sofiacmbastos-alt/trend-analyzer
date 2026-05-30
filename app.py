@@ -30,6 +30,14 @@ st.markdown("""
     font-family: Georgia, serif;
 }
 
+[data-testid="stMetric"] {
+    background: rgba(255,255,255,0.9);
+    border: 1px solid #E5DDD0;
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: 0 3px 12px rgba(0,0,0,.04);
+}
+
 .subtitle {
     text-align: center;
     color: #7A7268;
@@ -192,48 +200,26 @@ SPRING / SUMMER 2026 • TREND FORECASTING • CULTURAL SIGNALS
 # TREND CARDS
 # ----------------------
 
-cards = [
-    ("🔥 TOP TREND", top_trend),
-    ("🏆 BRAND LEADER", top_brand.title()),
-    ("⭐ CULTURAL ICON", top_celeb.title()),
-    ("🎨 COLOR TREND", top_color.title()),
-    ("👗 STYLE TREND", top_style.title())
-]
+row1 = st.columns(3)
 
-cols = st.columns(5)
+with row1[0]:
+    st.metric("🔥 Top Trend", top_trend)
 
-for col, (label, value) in zip(cols, cards):
+with row1[1]:
+    st.metric("🏆 Brand Leader", top_brand.title())
 
-    with col:
+with row1[2]:
+    st.metric("⭐ Cultural Icon", top_celeb.title())
 
-        with st.container(border=True):
+st.markdown("<br>", unsafe_allow_html=True)
 
-            st.markdown(
-                f"""
-                <div style="text-align:center;padding:10px 5px;">
-                    <div style="
-                        font-size:0.75rem;
-                        letter-spacing:2px;
-                        color:#8B8176;
-                        margin-bottom:18px;
-                        text-transform:uppercase;
-                    ">
-                        {label}
-                    </div>
+row2 = st.columns(2)
 
-                    <div style="
-                        font-size:1.8rem;
-                        font-weight:600;
-                        color:#111111;
-                        line-height:1.2;
-                        font-family:Georgia,serif;
-                    ">
-                        {value}
-                    </div>
-                </div>
-                """,
-                unsafe_allow_html=True
-            )
+with row2[0]:
+    st.metric("🎨 Color Trend", top_color.title())
+
+with row2[1]:
+    st.metric("👗 Style Trend", top_style.title())
 # ----------------------
 # ANALYSIS
 # ----------------------
