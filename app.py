@@ -1,4 +1,8 @@
 import streamlit as st
+import pandas as pd
 
-st.title("ModeRN")
-st.write("Real-time fashion insights powered by data and AI.")
+st.title("Fashion Intelligence Dashboard")
+
+df = pd.read_csv("fashion_news.csv")
+
+st.dataframe(df)
