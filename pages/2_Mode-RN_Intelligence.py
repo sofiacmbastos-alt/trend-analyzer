@@ -87,7 +87,7 @@ stop_words = {
     "will","been","were","being","after","before","dress","dresses","whether","ahead",
     "over","under","while","where","which","when",
     "what","than","then","also","more","most","fashion","style","styles","trend","trends",
-    "brand","brands","designer","designers",
+    "brand","brands","designer","designers","https","tried","start",
     "collection","collections",
     "season","seasons",
     "show","shows",
