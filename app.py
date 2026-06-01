@@ -258,28 +258,28 @@ CULTURAL SIGNALS • TREND ANALYSIS • FASHION NEWS
 </div>
 """, unsafe_allow_html=True)
 
-# HERO IMAGE
+# ----------------------
+# FASHION EDITORIAL LAYOUT
+# ----------------------
 
-st.image(
-    "IMG_6588.jpg",
-    use_container_width=True
-)
+left, right = st.columns([2, 1])
 
-# Text underneath the image
-st.markdown("""
-<div class="hero-text">
+with left:
+    st.image(
+        "images/hero1.jpg",
+        use_container_width=True
+    )
 
-<div class="hero-title">
-SPRING / SUMMER 2026
-</div>
+with right:
+    st.image(
+        "images/hero2.jpg",
+        use_container_width=True
+    )
 
-<div class="hero-subtitle">
-Emerging Luxury Signals
-</div>
-
-</div>
-""", unsafe_allow_html=True)
-
+    st.image(
+        "images/hero3.jpg",
+        use_container_width=True
+    )
 # ----------------------
 # TREND CARDS
 # ----------------------
