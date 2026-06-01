@@ -254,7 +254,7 @@ The Mode-RN
 </div>
 
 <div class="subtitle">
-SPRING / SUMMER 2026 • TREND FORECASTING • CULTURAL SIGNALS
+FASHION NEWS • TREND FORECASTING • CULTURAL SIGNALS
 </div>
 """, unsafe_allow_html=True)
 
