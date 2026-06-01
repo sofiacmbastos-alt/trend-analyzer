@@ -254,7 +254,7 @@ The Mode-RN
 </div>
 
 <div class="subtitle">
-FASHION NEWS • TREND FORECASTING • CULTURAL SIGNALS
+CULTURAL SIGNALS • TREND ANALYSIS • FASHION NEWS
 </div>
 """, unsafe_allow_html=True)
 
