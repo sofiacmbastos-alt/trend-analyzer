@@ -171,7 +171,8 @@ celebrities = [
     "kylie jenner",
     "timothee chalamet",
     "taylor swift",
-    "ariana grande"
+    "ariana grande",
+    "jane birkin"
 ]
 
 brands = [
@@ -183,7 +184,26 @@ brands = [
     "zara",
     "h&m",
     "versace",
-    "louis vuitton"
+    "louis vuitton",
+    "schiaparelli",
+    "lulu lemon",
+    "loewe",
+    "valentino",
+    "ralph lauren"
+    "fendi",
+    "coach",
+    "isabel marant",
+    "havaianas",
+    "uniqlo",
+    "zara",
+    "balenciaga",
+    "manolo blahnik",
+    "michael kors",
+    "celine",
+    "stella mccartney",
+    "miu miu",
+    "calvin klein"
+    
 ]
 
 def most_mentioned(items):
