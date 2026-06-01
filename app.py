@@ -148,7 +148,30 @@ celebrities = [
     "cara delevingne",
     "bella hadid",
     "kendall jenner",
-    "hailey bieber"
+    "hailey bieber",
+    "dua lipa",
+    "kim kardashian",
+    "kristin stewart",
+    "taylor russell",
+    "zendaya",
+    "bad bunny",
+    "harry styles",
+    "lilly allen",
+    "sydney sweeney",
+    "naomi osaka",
+    "justin bieber",
+    "victoria beckham",
+    "madonna",
+    "hannah einbinder",
+    "alex consani",
+    "jennifer lopez",
+    "kaia gerber",
+    "gigi hadid",
+    "jacob elordi",
+    "kylie jenner",
+    "timothee chalamet",
+    "taylor swift",
+    "ariana grande"
 ]
 
 brands = [
