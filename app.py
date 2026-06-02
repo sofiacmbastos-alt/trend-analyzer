@@ -266,7 +266,7 @@ left, right = st.columns([2, 1])
 
 with left:
     st.image(
-        "image3.JPG",
+        "image11.JPG",
         use_container_width=True
     )
 
@@ -277,7 +277,7 @@ with right:
     )
 
     st.image(
-        "image4.JPG",
+        "image10.JPG",
         use_container_width=True
     )
 # ----------------------
