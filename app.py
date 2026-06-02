@@ -268,8 +268,9 @@ components.html("""
 
 .slider-container {
     position: relative;
-    width: 100%;
-    height: 400px;
+    width: 60%;
+    height: 250px;
+    margin: auto;
     overflow: hidden;
     border-radius: 20px;
 }
@@ -279,7 +280,7 @@ components.html("""
     width: 100%;
     height: 100%;
     object-fit: contain;
-    background: black;
+    background: #000;
     opacity: 0;
     animation: fade 15s infinite;
 }
