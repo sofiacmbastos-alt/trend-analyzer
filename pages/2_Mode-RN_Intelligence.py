@@ -6,7 +6,7 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 
 st.set_page_config(
-    page_title="Trend Insights",
+    page_title="ModeRn Intelligence",
     layout="wide"
 )
 
