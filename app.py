@@ -267,40 +267,34 @@ components.html("""
 <style>
 
 .slider-container {
-    width: 100%;
-    max-width: 900px;
-    height: 400px;
+    position: relative;
+    width: 400px;      /* smaller width */
+    height: 600px;
     margin: auto;
+    overflow: hidden;
+    border-radius: 20px;
 }
 
 .slide {
     position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    background: #000;
+    object-fit: cover;   /* use contain if you want no cropping */
     opacity: 0;
     animation: fade 15s infinite;
 }
 
-.slide:nth-child(1) {
-    animation-delay: 0s;
-}
-
-.slide:nth-child(2) {
-    animation-delay: 5s;
-}
-
-.slide:nth-child(3) {
-    animation-delay: 10s;
-}
+.slide:nth-child(1) { animation-delay: 0s; }
+.slide:nth-child(2) { animation-delay: 5s; }
+.slide:nth-child(3) { animation-delay: 10s; }
 
 @keyframes fade {
-    0% {opacity:0;}
-    10% {opacity:1;}
-    30% {opacity:1;}
-    40% {opacity:0;}
-    100% {opacity:0;}
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    30% { opacity: 1; }
+    40% { opacity: 0; }
+    100% { opacity: 0; }
 }
 
 </style>
