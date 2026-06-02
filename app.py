@@ -267,12 +267,10 @@ components.html("""
 <style>
 
 .slider-container {
-    position: relative;
-    width: 500px;
+    width: 100%;
+    max-width: 900px;
     height: 400px;
     margin: auto;
-    overflow: hidden;
-    border-radius: 20px;
 }
 
 .slide {
