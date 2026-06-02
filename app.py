@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit.components.v1 as components
 import pandas as pd
 from collections import Counter
 import re
@@ -262,24 +263,54 @@ CULTURAL SIGNALS • TREND ANALYSIS • FASHION NEWS
 # FASHION EDITORIAL LAYOUT
 # ----------------------
 
-left, right = st.columns([2, 1])
+components.html("""
+<style>
 
-with left:
-    st.image(
-        "image7.JPG",
-        use_container_width=True
-    )
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 700px;
+    overflow: hidden;
+    border-radius: 20px;
+}
 
-with right:
-    st.image(
-        "image5.JPG",
-        use_container_width=True
-    )
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: fade 15s infinite;
+}
 
-    st.image(
-        "image10.JPG",
-        use_container_width=True
-    )
+.slide:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.slide:nth-child(2) {
+    animation-delay: 5s;
+}
+
+.slide:nth-child(3) {
+    animation-delay: 10s;
+}
+
+@keyframes fade {
+    0% {opacity:0;}
+    10% {opacity:1;}
+    30% {opacity:1;}
+    40% {opacity:0;}
+    100% {opacity:0;}
+}
+
+</style>
+
+<div class="slider-container">
+    <img class="slide" src="https://i.pinimg.com/736x/92/00/8c/92008c600225f042f92ab96d019eb711.jpg">
+    <img class="slide" src="https://i.pinimg.com/1200x/d0/91/eb/d091eb1059b3ac344fcf056c905fb2fd.jpg">
+    <img class="slide" src="https://i.pinimg.com/1200x/6b/dd/46/6bdd46e2f3ae7e5a7028847282aa10bb.jpg">
+</div>
+""", height=720)
 # ----------------------
 # TREND CARDS
 # ----------------------
