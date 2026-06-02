@@ -269,7 +269,7 @@ components.html("""
 .slider-container {
     position: relative;
     width: 100%;
-    height: 700px;
+    height: 400px;
     overflow: hidden;
     border-radius: 20px;
 }
@@ -310,7 +310,7 @@ components.html("""
     <img class="slide" src="https://i.pinimg.com/1200x/d0/91/eb/d091eb1059b3ac344fcf056c905fb2fd.jpg">
     <img class="slide" src="https://i.pinimg.com/1200x/6b/dd/46/6bdd46e2f3ae7e5a7028847282aa10bb.jpg">
 </div>
-""", height=720)
+""", height=420)
 # ----------------------
 # TREND CARDS
 # ----------------------
