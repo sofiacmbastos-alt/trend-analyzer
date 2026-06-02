@@ -268,8 +268,8 @@ components.html("""
 
 .slider-container {
     position: relative;
-    width: 60%;
-    height: 250px;
+    width: 500px;
+    height: 400px;
     margin: auto;
     overflow: hidden;
     border-radius: 20px;
