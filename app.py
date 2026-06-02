@@ -278,7 +278,8 @@ components.html("""
     position: absolute;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    background: black;
     opacity: 0;
     animation: fade 15s infinite;
 }
