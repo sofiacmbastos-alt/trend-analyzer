@@ -4,7 +4,7 @@ from collections import Counter
 import re
 
 st.set_page_config(
-    page_title="ModeRN",
+    page_title="ModeRn",
     layout="wide"
 )
 
@@ -250,7 +250,7 @@ top_trend = Counter(words).most_common(1)[0][0].title()
 
 st.markdown("""
 <div class="main-title">
-The Mode-RN
+The Mode-Rn
 </div>
 
 <div class="subtitle">
