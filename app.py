@@ -268,7 +268,7 @@ components.html("""
 
 .slider-container {
     position: relative;
-    width: 400px;      /* smaller width */
+    width: 900px;      /* smaller width */
     height: 600px;
     margin: auto;
     overflow: hidden;
