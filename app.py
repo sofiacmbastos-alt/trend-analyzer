@@ -306,9 +306,9 @@ components.html("""
 </style>
 
 <div class="slider-container">
-    <img class="slide" src="https://i.pinimg.com/736x/25/a4/11/25a41153f8a9acbd46a19ca20b4c38d2.jpg">
+    <img class="slide" src="https://i.pinimg.com/1200x/1e/af/88/1eaf88423b1c0e26f93e50a3bec93825.jpg">
     <img class="slide" src="https://i.pinimg.com/1200x/d0/91/eb/d091eb1059b3ac344fcf056c905fb2fd.jpg">
-    <img class="slide" src="https://i.pinimg.com/1200x/90/ca/34/90ca34521bd4b869de12fc136e773433.jpg">
+    <img class="slide" src="https://i.pinimg.com/1200x/53/35/ab/5335ab031e9b10dd91cda3c6dcb9177e.jpg">
 </div>
 """, height=420)
 # ----------------------
