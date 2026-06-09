@@ -176,7 +176,16 @@ celebrities = [
     "timothee chalamet",
     "taylor swift",
     "ariana grande",
-    "jane birkin"
+    "jane birkin",
+    "emma watson",
+    "gracie abrams",
+    "katie holmes",
+    "sarah pidgeon",
+    "lilly collins",
+    "naomi osaka",
+    "jung kook",
+    "rihanna",
+    "aubrey plaza"
 ]
 
 brands = [
