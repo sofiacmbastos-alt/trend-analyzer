@@ -359,7 +359,7 @@ with col1:
         background:white;
     ">
         <img src="https://mymum-madeit.com/cdn/shop/files/000055370013.jpg?v=1760413890&width=1946" width="100%">
-        <h4>Linen Maxi Dress</h4>
+        <h4>Monday Mini Dress</h4>
         <a href="https://mymum-madeit.com/products/monday-mini-dress-assembly-check" target="_blank">Shop Now</a>
     </div>
     """, unsafe_allow_html=True)
