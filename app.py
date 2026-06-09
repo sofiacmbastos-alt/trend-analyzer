@@ -113,8 +113,8 @@ st.markdown("""
 # LOAD DATA
 # ----------------------
 
-df1 = pd.read_csv("fashion_news.csv")
-df2 = pd.read_csv("fashion_news2.csv")
+df1 = pd.read_csv("fashion_news2.csv")
+df2 = pd.read_csv("fashion_news.csv")
 
 df = pd.concat([df1, df2], ignore_index=True)
 
