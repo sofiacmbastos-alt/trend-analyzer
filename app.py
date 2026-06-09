@@ -372,9 +372,9 @@ with col2:
         text-align:center;
         background:white;
     ">
-        <img src="IMAGE_URL" width="100%">
-        <h4>Linen Maxi Dress</h4>
-        <a href="PRODUCT_URL" target="_blank">Shop Now</a>
+        <img src="https://repetto.com/cdn/shop/files/preview_images/e9ba1fe4a930498695483fba2d10a4f6.thumbnail.0000000000_960x.jpg?v=1758702806" width="100%">
+        <h4>Cendrillon Ballet Flats</h4>
+        <a href="https://repetto.com/en/products/ballerines-cendrillon-v4257twp-899-1?variant=50187301093704">Shop Now</a>
     </div>
     """, unsafe_allow_html=True)
 
