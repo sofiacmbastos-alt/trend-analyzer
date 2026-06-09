@@ -345,7 +345,33 @@ with row2[1]:
 # ANALYSIS
 # ----------------------
 
-df2 = pd.read_csv("fashion_news2.csv")
+st.header("✨ Editor's Picks")
+
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.image(
+        "https://example.com/dress.jpg",
+        use_container_width=True
+    )
+    st.markdown("**Linen Maxi Dress**")
+    st.markdown("[Shop Now](https://store.com/product1)")
+
+with col2:
+    st.image(
+        "https://example.com/bag.jpg",
+        use_container_width=True
+    )
+    st.markdown("**Suede Tote Bag**")
+    st.markdown("[Shop Now](https://store.com/product2)")
+
+with col3:
+    st.image(
+        "https://example.com/shoes.jpg",
+        use_container_width=True
+    )
+    st.markdown("**Leather Loafers**")
+    st.markdown("[Shop Now](https://store.com/product3)")
 # ----------------------
 # ARTICLES
 # ----------------------
