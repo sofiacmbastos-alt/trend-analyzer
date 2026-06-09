@@ -345,33 +345,53 @@ with row2[1]:
 # ANALYSIS
 # ----------------------
 
-st.header("✨ Editor's Picks")
+st.header("Editor's Picks")
 
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.image(
-        "https://example.com/dress.jpg",
-        use_container_width=True
-    )
-    st.markdown("**Linen Maxi Dress**")
-    st.markdown("[Shop Now](https://store.com/product1)")
-
+    st.markdown("""
+    <div style="
+        border:1px solid #ddd;
+        padding:15px;
+        border-radius:10px;
+        text-align:center;
+        background:white;
+    ">
+        <img src="IMAGE_URL" width="100%">
+        <h4>Linen Maxi Dress</h4>
+        <a href="PRODUCT_URL" target="_blank">Shop Now</a>
+    </div>
+    """, unsafe_allow_html=True)
 with col2:
-    st.image(
-        "https://example.com/bag.jpg",
-        use_container_width=True
-    )
-    st.markdown("**Suede Tote Bag**")
-    st.markdown("[Shop Now](https://store.com/product2)")
+    st.markdown("""
+    <div style="
+        border:1px solid #ddd;
+        padding:15px;
+        border-radius:10px;
+        text-align:center;
+        background:white;
+    ">
+        <img src="IMAGE_URL" width="100%">
+        <h4>Linen Maxi Dress</h4>
+        <a href="PRODUCT_URL" target="_blank">Shop Now</a>
+    </div>
+    """, unsafe_allow_html=True)
 
 with col3:
-    st.image(
-        "https://example.com/shoes.jpg",
-        use_container_width=True
-    )
-    st.markdown("**Leather Loafers**")
-    st.markdown("[Shop Now](https://store.com/product3)")
+    st.markdown("""
+    <div style="
+        border:1px solid #ddd;
+        padding:15px;
+        border-radius:10px;
+        text-align:center;
+        background:white;
+    ">
+        <img src="IMAGE_URL" width="100%">
+        <h4>Linen Maxi Dress</h4>
+        <a href="PRODUCT_URL" target="_blank">Shop Now</a>
+    </div>
+    """, unsafe_allow_html=True)
 # ----------------------
 # ARTICLES
 # ----------------------
