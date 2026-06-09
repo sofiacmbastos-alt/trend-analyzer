@@ -387,9 +387,9 @@ with col3:
         text-align:center;
         background:white;
     ">
-        <img src="IMAGE_URL" width="100%">
-        <h4>Linen Maxi Dress</h4>
-        <a href="PRODUCT_URL" target="_blank">Shop Now</a>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsoQxcqoyIOlD9Q_sVhCw75Yvenp6H8qxnDA&s" width="100%">
+        <h4>Mapo Dress</h4>
+        <a href="https://palomawool.com/products/mapo-dress-short-high-neck-dress-fitted-hem-black" target="_blank">Shop Now</a>
     </div>
     """, unsafe_allow_html=True)
 # ----------------------
