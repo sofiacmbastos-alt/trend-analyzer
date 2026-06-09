@@ -113,7 +113,7 @@ st.markdown("""
 # LOAD DATA
 # ----------------------
 
-df = pd.read_csv("fashion_news.csv")
+df = pd.read_csv("fashion_news.csv","fashion_news (1).csv")
 
 # ----------------------
 # TREND EXTRACTION
