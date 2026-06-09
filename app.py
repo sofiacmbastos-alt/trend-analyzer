@@ -345,42 +345,7 @@ with row2[1]:
 # ANALYSIS
 # ----------------------
 
-st.markdown(
-    '<div class="section-title">Trend Analysis</div>',
-    unsafe_allow_html=True
-)
-
-st.markdown(
-    f"""
-    <div class="analysis-card">
-
-    Current fashion coverage suggests growing momentum around
-    <b>{top_trend}</b>.
-
-    <br><br>
-
-    <b>{top_brand.title()}</b> is currently the most visible
-    fashion brand in media coverage while
-    <b>{top_celeb.title()}</b> remains the strongest
-    celebrity influence.
-
-    <br><br>
-
-    Color discussions are dominated by
-    <b>{top_color.title()}</b> while style narratives
-    continue to center around
-    <b>{top_style.title()}</b> aesthetics.
-
-    <br><br>
-
-    These insights were automatically generated
-    from the latest fashion media coverage.
-
-    </div>
-    """,
-    unsafe_allow_html=True
-)
-
+df2 = pd.read_csv("fashion_news2.csv")
 # ----------------------
 # ARTICLES
 # ----------------------
