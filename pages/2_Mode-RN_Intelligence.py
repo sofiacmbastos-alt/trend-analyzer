@@ -191,19 +191,6 @@ with st.container(border=True):
     st.pyplot(fig)
 
 st.markdown(
-    '<div class="section-title">Emerging Signals</div>',
-    unsafe_allow_html=True
-)
-
-signals = top_words[:5]
-
-for word, count in signals:
-
-    st.success(
-        f"{word.title()} • {count} mentions"
-    )
-
-st.markdown(
     '<div class="section-title">Source Analysis</div>',
     unsafe_allow_html=True
 )
