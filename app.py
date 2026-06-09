@@ -358,9 +358,9 @@ with col1:
         text-align:center;
         background:white;
     ">
-        <img src="IMAGE_URL" width="100%">
+        <img src="https://mymum-madeit.com/cdn/shop/files/000055370013.jpg?v=1760413890&width=1946" width="100%">
         <h4>Linen Maxi Dress</h4>
-        <a href="PRODUCT_URL" target="_blank">Shop Now</a>
+        <a href="https://mymum-madeit.com/products/monday-mini-dress-assembly-check" target="_blank">Shop Now</a>
     </div>
     """, unsafe_allow_html=True)
 with col2:
