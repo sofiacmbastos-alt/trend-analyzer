@@ -390,6 +390,61 @@ filtered_df = st.session_state.filtered_df
 st.caption(f"{len(filtered_df)} articles found")
 
 # ----------------------
+# ARTICLE SEARCH
+# ----------------------
+
+st.markdown(
+    '<div class="section-title">Search Articles</div>',
+    unsafe_allow_html=True
+)
+
+col1, col2 = st.columns([3, 1])
+
+with col1:
+    search = st.text_input(
+        "",
+        placeholder="Search brands, celebrities, trends, sustainability..."
+    )
+
+with col2:
+    sources = ["All Sources"] + sorted(
+        df["fonte"].dropna().unique().tolist()
+    )
+
+    source_filter = st.selectbox(
+        "Source",
+        sources
+    )
+
+# Apply filters
+
+filtered_df = df.copy()
+
+if search.strip():
+
+    filtered_df = filtered_df[
+        filtered_df["titulo"].fillna("").str.contains(
+            search,
+            case=False,
+            na=False
+        )
+        |
+        filtered_df["resumo"].fillna("").str.contains(
+            search,
+            case=False,
+            na=False
+        )
+    ]
+
+if source_filter != "All Sources":
+
+    filtered_df = filtered_df[
+        filtered_df["fonte"] == source_filter
+    ]
+
+st.caption(f"{len(filtered_df)} articles found")
+
+# ----------------------
 # LATEST ARTICLES
 # ----------------------
 
