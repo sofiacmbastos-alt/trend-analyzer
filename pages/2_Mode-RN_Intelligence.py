@@ -152,53 +152,5 @@ for i, (word, count) in enumerate(top_words[:8]):
                 value=count
             )
 
-# ----------------------
-# WORD CLOUD
-# ----------------------
-
-st.markdown(
-    '<div class="section-title">Fashion Vocabulary Cloud</div>',
-    unsafe_allow_html=True
-)
-
-def custom_color_func(*args, **kwargs):
-    colors = [
-        "#111111",  # black
-        "#6E6259",  # taupe
-        "#A89B8C",  # beige
-        "#8B7355",  # warm brown
-    ]
-    import random
-    return random.choice(colors)
-
-text_for_cloud = " ".join(words)
-
-wordcloud = WordCloud(
-    width=1200,
-    height=600,
-    background_color="#F7F2E9",
-    collocations=False
-).generate(text_for_cloud)
-
-wordcloud.recolor(color_func=custom_color_func)
-
-fig, ax = plt.subplots(figsize=(12, 6))
-
-ax.imshow(wordcloud, interpolation="bilinear")
-ax.axis("off")
-
-with st.container(border=True):
-    st.pyplot(fig)
-
-st.markdown(
-    '<div class="section-title">Source Analysis</div>',
-    unsafe_allow_html=True
-)
-
-source_counts = (
-    df["fonte"]
-    .value_counts()
-    .head(10)
-)
 
 st.bar_chart(source_counts)
