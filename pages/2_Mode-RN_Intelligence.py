@@ -253,7 +253,7 @@ stop_words = {
     "many","much","make","made",
     "like","just","still","even","bazaar",
     "wwd","business","magazine",
-    "editor","editors"
+    "editor","editors","every"
 }
 
 words = [w for w in words if w not in stop_words and len(w) > 4]
