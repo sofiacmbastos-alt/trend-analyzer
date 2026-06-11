@@ -264,12 +264,10 @@ if source_filter != "All Sources":
 
 if search.strip():
 
-   if search.strip():
-
     st.markdown(
         f"### Results for: **{search}**"
     )
-
+    
 st.caption(f"{len(filtered_df)} articles found")
 
 # ----------------------
