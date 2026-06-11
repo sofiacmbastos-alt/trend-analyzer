@@ -2,8 +2,6 @@ import streamlit as st
 import pandas as pd
 from collections import Counter
 import re
-from wordcloud import WordCloud
-import matplotlib.pyplot as plt
 
 st.set_page_config(
     page_title="ModeRn Intelligence",
@@ -152,5 +150,15 @@ for i, (word, count) in enumerate(top_words[:8]):
                 value=count
             )
 
+st.markdown(
+    '<div class="section-title">Source Analysis</div>',
+    unsafe_allow_html=True
+)
+
+source_counts = (
+    df["fonte"]
+    .value_counts()
+    .head(10)
+)
 
 st.bar_chart(source_counts)
