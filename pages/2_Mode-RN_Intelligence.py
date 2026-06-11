@@ -55,7 +55,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-df = pd.read_csv("fashion_news.csv")
+df = pd.read_csv("merged.csv")
 
 all_text = (
     df["titulo"].fillna("") + " " +
