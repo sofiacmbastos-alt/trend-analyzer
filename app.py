@@ -106,6 +106,26 @@ st.markdown("""
     margin-bottom: 30px;
 }
 
+.stTextInput input {
+    background: white;
+    border: 1px solid #E5DDD0;
+    border-radius: 15px;
+    padding: 12px;
+    font-size: 16px;
+}
+
+.stButton button {
+    background: #111111;
+    color: white;
+    border-radius: 12px;
+    border: none;
+    padding: 0.6rem 1.2rem;
+}
+
+.stButton button:hover {
+    background: #333333;
+}
+
 </style>
 """, unsafe_allow_html=True)
 
@@ -347,24 +367,71 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-search_term = st.text_input(
+search = st.text_input(
     "",
-    placeholder="Search trends, brands, celebrities, sustainability..."
+    placeholder="Search brands, celebrities, trends, sustainability..."
 )
 
-filtered_df = df.copy()
+if "filtered_df" not in st.session_state:
+    st.session_state.filtered_df = df
 
-if search_term:
-    mask = (
-        df["titulo"].fillna("").str.contains(search_term, case=False, na=False) |
-        df["resumo"].fillna("").str.contains(search_term, case=False, na=False) |
-        df["fonte"].fillna("").str.contains(search_term, case=False, na=False)
-    )
+if st.button("Search"):
 
-    filtered_df = df[mask]
+    if search.strip():
+
+        st.session_state.filtered_df = df[
+            df["titulo"].fillna("").str.contains(search, case=False, na=False) |
+            df["resumo"].fillna("").str.contains(search, case=False, na=False) |
+            df["fonte"].fillna("").str.contains(search, case=False, na=False)
+        ]
+
+    else:
+        st.session_state.filtered_df = df
+
+filtered_df = st.session_state.filtered_df
 
 st.caption(f"{len(filtered_df)} articles found")
 
+# ----------------------
+# LATEST ARTICLES
+# ----------------------
+
+st.markdown(
+    '<div class="section-title">Latest Articles</div>',
+    unsafe_allow_html=True
+)
+
+st.markdown("""
+<style>
+[data-testid="stVerticalBlockBorderWrapper"] {
+    background: rgba(255,255,255,0.85);
+    border: 1px solid #E5DDD0 !important;
+    border-radius: 18px !important;
+    box-shadow: 0 3px 12px rgba(0,0,0,.04);
+    padding: 8px;
+}
+</style>
+""", unsafe_allow_html=True)
+
+cols = st.columns(2)
+
+for i, (_, row) in enumerate(filtered_df.iterrows()):
+
+    with cols[i % 2]:
+
+        with st.container(border=True):
+
+            st.markdown(f"### {row['titulo']}")
+
+            st.caption(f"📰 {row['fonte']}")
+
+            st.write(row["resumo"])
+
+            st.link_button(
+                "Read Article",
+                row["link"],
+                use_container_width=True
+            )
 
 # ----------------------
 # ARTICLES
