@@ -209,16 +209,7 @@ components.html("""
 # ARTICLE SEARCH
 # ----------------------
 
-st.markdown("""
-<div style="
-background:white;
-border:1px solid #E5DDD0;
-border-radius:24px;
-padding:30px;
-margin-top:20px;
-margin-bottom:20px;
-">
-""", unsafe_allow_html=True)
+with st.container(border=True):
 
     st.markdown(
         """
@@ -253,9 +244,6 @@ Search Articles
             "Source",
             sources
         )
-
-st.markdown("</div>", unsafe_allow_html=True)
-        
 # Apply filters
 
 filtered_df = df.copy()
