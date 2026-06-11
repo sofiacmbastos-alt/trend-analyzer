@@ -292,6 +292,8 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+pulse = st.columns(4)
+
 with pulse[0]:
     st.write("Articles")
     st.subheader(len(df))
@@ -307,7 +309,6 @@ with pulse[2]:
 with pulse[3]:
     st.write("Mentions")
     st.subheader(top_words[0][1])
-
 # ----------------------
 # TOP KEYWORDS
 # ----------------------
@@ -322,11 +323,11 @@ cols = st.columns(2)
 for i, (word, count) in enumerate(top_words[:8]):
 
     with cols[i % 2]:
+        st.write(f"• {word.title()} — {count} mentions")
 
-        with st.container(border=True):
-
-            st.markdown(f"### {word.title()}")
-st.write(f"{count} mentions")
+# ----------------------
+# SOURCE ANALYSIS
+# ----------------------
 
 st.markdown(
     '<div class="section-title">Source Analysis</div>',
