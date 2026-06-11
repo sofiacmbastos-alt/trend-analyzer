@@ -208,20 +208,16 @@ components.html("""
 # ARTICLE SEARCH
 # ----------------------
 
+# ----------------------
+# ARTICLE SEARCH
+# ----------------------
+
 with st.container(border=True):
 
-   st.markdown("""
-<style>
-[data-testid="stVerticalBlockBorderWrapper"] {
-    background: rgba(255,255,255,0.85);
-    border: 1px solid #E5DDD0 !important;
-    border-radius: 24px !important;
-    box-shadow: 0 3px 12px rgba(0,0,0,.04);
-    padding: 20px;
-}
-</style>
-""", unsafe_allow_html=True)
-    
+    st.markdown(
+        "### Search Articles"
+    )
+
     col1, col2 = st.columns([3,1])
 
     with col1:
