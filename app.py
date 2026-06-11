@@ -109,9 +109,17 @@ st.markdown("""
 .stTextInput input {
     background: white;
     border: 1px solid #E5DDD0;
-    border-radius: 15px;
-    padding: 12px;
-    font-size: 16px;
+    border-radius: 30px;
+    padding: 16px;
+    font-size: 18px;
+}
+
+[data-testid="stVerticalBlockBorderWrapper"] {
+    background: rgba(255,255,255,0.85);
+    border: 1px solid #E5DDD0 !important;
+    border-radius: 24px !important;
+    box-shadow: 0 3px 12px rgba(0,0,0,.04);
+    padding: 20px;
 }
 
 .stButton button {
@@ -200,28 +208,36 @@ components.html("""
 # ARTICLE SEARCH
 # ----------------------
 
-st.markdown(
-    '<div class="section-title">Search Articles</div>',
-    unsafe_allow_html=True
-)
+with st.container(border=True):
 
-col1, col2 = st.columns([3, 1])
+   st.markdown("""
+<style>
+[data-testid="stVerticalBlockBorderWrapper"] {
+    background: rgba(255,255,255,0.85);
+    border: 1px solid #E5DDD0 !important;
+    border-radius: 24px !important;
+    box-shadow: 0 3px 12px rgba(0,0,0,.04);
+    padding: 20px;
+}
+</style>
+""", unsafe_allow_html=True)
+    col1, col2 = st.columns([3,1])
 
-with col1:
-    search = st.text_input(
-        "",
-        placeholder="Search brands, celebrities, trends, sustainability..."
-    )
+    with col1:
+        search = st.text_input(
+            "",
+            placeholder="Search brands, celebrities, trends, sustainability..."
+        )
 
-with col2:
-    sources = ["All Sources"] + sorted(
-        df["fonte"].dropna().unique().tolist()
-    )
+    with col2:
+        sources = ["All Sources"] + sorted(
+            df["fonte"].dropna().unique().tolist()
+        )
 
-    source_filter = st.selectbox(
-        "Source",
-        sources
-    )
+        source_filter = st.selectbox(
+            "Source",
+            sources
+        )
         
 # Apply filters
 
