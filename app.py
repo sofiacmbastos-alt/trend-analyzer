@@ -202,39 +202,24 @@ components.html("""
 # ARTICLE SEARCH
 # ----------------------
 
-st.markdown("## Search Articles")
-
-left, center, right = st.columns([1,3,1])
-
-with center:
-    search = st.text_input(
-        "",
-        placeholder="Search brands, celebrities, trends..."
-    )
-
-    source_filter = st.selectbox(
-        "Source",
-        sources
-    )
-
 with st.container(border=True):
 
     st.markdown(
-        "<h2 style='text-align:center;'>Search Articles</h2>",
+        "<h2 style='text-align:center; font-family:Georgia, serif;'>Search Articles</h2>",
         unsafe_allow_html=True
     )
 
-    left, center, right = st.columns([1,4,1])
+    sources = ["All Sources"] + sorted(
+        df["fonte"].dropna().unique().tolist()
+    )
+
+    left, center, right = st.columns([1,3,1])
 
     with center:
+
         search = st.text_input(
             "",
             placeholder="Search brands, celebrities, trends, sustainability..."
-        )
-
-    with center:
-        sources = ["All Sources"] + sorted(
-            df["fonte"].dropna().unique().tolist()
         )
 
         source_filter = st.selectbox(
