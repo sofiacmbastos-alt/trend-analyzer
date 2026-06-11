@@ -122,6 +122,13 @@ st.markdown("""
     padding: 0.6rem 1.2rem;
 }
 
+[data-testid="stVerticalBlockBorderWrapper"] {
+    background: white !important;
+    border: 1px solid #E5DDD0 !important;
+    border-radius: 18px !important;
+    box-shadow: 0 3px 12px rgba(0,0,0,.04);
+}
+
 .stButton button:hover {
     background: #333333;
 }
@@ -205,7 +212,18 @@ components.html("""
 with st.container(border=True):
 
     st.markdown(
-        "<h2 style='text-align:center; font-family:Georgia, serif;'>Search Articles</h2>",
+        """
+<h2 style="
+text-align:center;
+font-family:Georgia, serif;
+font-size:2.5rem;
+font-weight:300;
+letter-spacing:4px;
+color:#111111;
+">
+Search Articles
+</h2>
+""",
         unsafe_allow_html=True
     )
 
@@ -269,18 +287,6 @@ st.markdown(
     '<div class="section-title">Latest Articles</div>',
     unsafe_allow_html=True
 )
-
-st.markdown("""
-<style>
-[data-testid="stVerticalBlockBorderWrapper"] {
-    background: rgba(255,255,255,0.85);
-    border: 1px solid #E5DDD0 !important;
-    border-radius: 18px !important;
-    box-shadow: 0 3px 12px rgba(0,0,0,.04);
-    padding: 8px;
-}
-</style>
-""", unsafe_allow_html=True)
 
 cols = st.columns(2)
 
