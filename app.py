@@ -412,17 +412,11 @@ if source_filter != "All Sources":
 
 if search.strip():
 
-    st.markdown(f"""
-    <div style="
-        background:white;
-        border:1px solid #E5DDD0;
-        padding:15px;
-        border-radius:15px;
-        margin-bottom:15px;
-    ">
-        <strong>Search:</strong> {search}
-    </div>
-    """, unsafe_allow_html=True)
+   if search.strip():
+
+    st.markdown(
+        f"### Results for: **{search}**"
+    )
 
 st.caption(f"{len(filtered_df)} articles found")
 
