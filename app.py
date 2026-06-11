@@ -338,7 +338,7 @@ components.html("""
 # TREND CARDS
 # ----------------------
 
-row1 = st.columns(3)
+row1 = st.columns(2)
 
 with row1[0]:
     st.metric("TOP TREND", top_trend)
@@ -346,18 +346,15 @@ with row1[0]:
 with row1[1]:
     st.metric("BRAND LEADER", top_brand.title())
 
-with row1[2]:
-    st.metric("CULTURAL ICON", top_celeb.title())
-
 st.markdown("<br>", unsafe_allow_html=True)
 
 row2 = st.columns(2)
 
 with row2[0]:
-    st.metric("COLOR TREND", top_color.title())
+    st.metric("CULTURAL ICON", top_celeb.title())
 
 with row2[1]:
-    st.metric("STYLE TREND", top_style.title())
+    st.metric("COLOR TREND", top_color.title())
 # ----------------------
 # ARTICLE SEARCH
 # ----------------------
