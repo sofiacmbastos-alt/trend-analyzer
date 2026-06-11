@@ -355,39 +355,6 @@ with row2[0]:
 
 with row2[1]:
     st.metric("COLOR TREND", top_color.title())
-# ----------------------
-# ARTICLE SEARCH
-# ----------------------
-
-st.markdown(
-    '<div class="section-title">Search Articles</div>',
-    unsafe_allow_html=True
-)
-
-search = st.text_input(
-    "",
-    placeholder="Search brands, celebrities, trends, sustainability..."
-)
-
-if "filtered_df" not in st.session_state:
-    st.session_state.filtered_df = df
-
-if st.button("Search"):
-
-    if search.strip():
-
-        st.session_state.filtered_df = df[
-            df["titulo"].fillna("").str.contains(search, case=False, na=False) |
-            df["resumo"].fillna("").str.contains(search, case=False, na=False) |
-            df["fonte"].fillna("").str.contains(search, case=False, na=False)
-        ]
-
-    else:
-        st.session_state.filtered_df = df
-
-filtered_df = st.session_state.filtered_df
-
-st.caption(f"{len(filtered_df)} articles found")
 
 # ----------------------
 # ARTICLE SEARCH
