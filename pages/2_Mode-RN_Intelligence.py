@@ -272,6 +272,24 @@ with snapshot[2]:
 with snapshot[3]:
     st.metric("COLOR TREND", top_color.title())
 
+st.markdown(
+    '<div class="section-title">Market Pulse</div>',
+    unsafe_allow_html=True
+)
+
+pulse = st.columns(4)
+
+with pulse[0]:
+    st.metric("Articles", len(df))
+
+with pulse[1]:
+    st.metric("Keywords", len(set(words)))
+
+with pulse[2]:
+    st.metric("Top Signal", top_words[0][0].title())
+
+with pulse[3]:
+    st.metric("Mentions", top_words[0][1])
     
 st.markdown(
     '<div class="section-title">Top Keywords</div>',
