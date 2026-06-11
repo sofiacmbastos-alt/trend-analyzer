@@ -357,6 +357,19 @@ with row2[1]:
     st.metric("COLOR TREND", top_color.title())
 
 # ----------------------
+# TOP SOURCES
+# ----------------------
+
+st.markdown(
+    '<div class="section-title">Media Landscape</div>',
+    unsafe_allow_html=True
+)
+
+source_counts = df["fonte"].value_counts()
+
+st.bar_chart(source_counts)
+
+# ----------------------
 # ARTICLE SEARCH
 # ----------------------
 
@@ -382,7 +395,31 @@ with col2:
         "Source",
         sources
     )
+    
+    sort_option = st.selectbox(
+    "Sort By",
+    ["Newest First", "Oldest First"]
+)
 
+if "data" in filtered_df.columns:
+
+    filtered_df["data"] = pd.to_datetime(
+        filtered_df["data"],
+        errors="coerce"
+    )
+
+    if sort_option == "Newest First":
+        filtered_df = filtered_df.sort_values(
+            "data",
+            ascending=False
+        )
+
+    else:
+        filtered_df = filtered_df.sort_values(
+            "data",
+            ascending=True
+        )
+        
 # Apply filters
 
 filtered_df = df.copy()
