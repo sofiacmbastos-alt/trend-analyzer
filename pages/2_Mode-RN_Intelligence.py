@@ -15,6 +15,14 @@ st.markdown("""
     background-color: #F7F2E9;
 }
 
+[data-testid="stMetric"] {
+    background: rgba(255,255,255,0.9);
+    border: 1px solid #E5DDD0;
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: 0 3px 12px rgba(0,0,0,.04);
+}
+
 .page-title {
     font-size: 3rem;
     font-weight: 300;
