@@ -219,7 +219,7 @@ brands = [
     "lulu lemon",
     "loewe",
     "valentino",
-    "ralph lauren"
+    "ralph lauren",
     "fendi",
     "coach",
     "isabel marant",
