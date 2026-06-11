@@ -221,6 +221,7 @@ with st.container(border=True):
 }
 </style>
 """, unsafe_allow_html=True)
+    
     col1, col2 = st.columns([3,1])
 
     with col1:
