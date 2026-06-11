@@ -356,18 +356,6 @@ with row2[0]:
 with row2[1]:
     st.metric("COLOR TREND", top_color.title())
 
-# ----------------------
-# TOP SOURCES
-# ----------------------
-
-st.markdown(
-    '<div class="section-title">Media Landscape</div>',
-    unsafe_allow_html=True
-)
-
-source_counts = df["fonte"].value_counts()
-
-st.bar_chart(source_counts)
 
 # ----------------------
 # ARTICLE SEARCH
