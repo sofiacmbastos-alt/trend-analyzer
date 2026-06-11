@@ -265,20 +265,27 @@ top_words = Counter(words).most_common(20)
 # TREND SNAPSHOT
 # ----------------------
 
+row1 = st.columns(2)
 
-snapshot = st.columns(4)
-
-with snapshot[0]:
+with row1[0]:
     st.metric("TOP TREND", top_trend)
 
-with snapshot[1]:
+with row1[1]:
     st.metric("BRAND LEADER", top_brand.title())
 
-with snapshot[2]:
+st.markdown("<br>", unsafe_allow_html=True)
+
+row2 = st.columns(2)
+
+with row2[0]:
     st.metric("CULTURAL ICON", top_celeb.title())
 
-with snapshot[3]:
+with row2[1]:
     st.metric("COLOR TREND", top_color.title())
+
+# ----------------------
+# MARKET PULSE
+# ----------------------
 
 st.markdown(
     '<div class="section-title">Market Pulse</div>',
