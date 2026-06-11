@@ -114,14 +114,6 @@ st.markdown("""
     font-size: 18px;
 }
 
-[data-testid="stVerticalBlockBorderWrapper"] {
-    background: rgba(255,255,255,0.85);
-    border: 1px solid #E5DDD0 !important;
-    border-radius: 24px !important;
-    box-shadow: 0 3px 12px rgba(0,0,0,.04);
-    padding: 20px;
-}
-
 .stButton button {
     background: #111111;
     color: white;
@@ -204,56 +196,51 @@ components.html("""
 </div>
 """, height=420)
 
-# ----------------------
-# ARTICLE SEARCH
-# ----------------------
+
 
 # ----------------------
 # ARTICLE SEARCH
 # ----------------------
 
-st.markdown("""
-<div style="
-    background:white;
-    padding:35px;
-    border-radius:30px;
-    border:1px solid #E5DDD0;
-    box-shadow:0 3px 12px rgba(0,0,0,.04);
-    margin-top:20px;
-    margin-bottom:30px;
-">
+st.markdown("## Search Articles")
 
-<h2 style="
-    text-align:center;
-    font-family:Georgia, serif;
-    font-weight:400;
-    margin-bottom:20px;
-">
-Search Articles
-</h2>
-
-</div>
-""", unsafe_allow_html=True)
-
-left, center, right = st.columns([1,4,1])
+left, center, right = st.columns([1,3,1])
 
 with center:
     search = st.text_input(
         "",
-        placeholder="Search brands, celebrities, trends, sustainability..."
+        placeholder="Search brands, celebrities, trends..."
     )
 
-sources = ["All Sources"] + sorted(
-    df["fonte"].dropna().unique().tolist()
-)
-
-left, center, right = st.columns([2,2,2])
-
-with center:
     source_filter = st.selectbox(
         "Source",
         sources
     )
+
+with st.container(border=True):
+
+    st.markdown(
+        "<h2 style='text-align:center;'>Search Articles</h2>",
+        unsafe_allow_html=True
+    )
+
+    left, center, right = st.columns([1,4,1])
+
+    with center:
+        search = st.text_input(
+            "",
+            placeholder="Search brands, celebrities, trends, sustainability..."
+        )
+
+    with center:
+        sources = ["All Sources"] + sorted(
+            df["fonte"].dropna().unique().tolist()
+        )
+
+        source_filter = st.selectbox(
+            "Source",
+            sources
+        )
         
 # Apply filters
 
