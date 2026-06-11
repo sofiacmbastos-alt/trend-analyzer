@@ -339,8 +339,31 @@ with row2[0]:
 with row2[1]:
     st.metric("STYLE TREND", top_style.title())
 # ----------------------
-# ANALYSIS
+# ARTICLE SEARCH
 # ----------------------
+
+st.markdown(
+    '<div class="section-title">Search Articles</div>',
+    unsafe_allow_html=True
+)
+
+search_term = st.text_input(
+    "",
+    placeholder="Search trends, brands, celebrities, sustainability..."
+)
+
+filtered_df = df.copy()
+
+if search_term:
+    mask = (
+        df["titulo"].fillna("").str.contains(search_term, case=False, na=False) |
+        df["resumo"].fillna("").str.contains(search_term, case=False, na=False) |
+        df["fonte"].fillna("").str.contains(search_term, case=False, na=False)
+    )
+
+    filtered_df = df[mask]
+
+st.caption(f"{len(filtered_df)} articles found")
 
 
 # ----------------------
