@@ -260,6 +260,32 @@ words = [w for w in words if w not in stop_words and len(w) > 4]
 
 top_words = Counter(words).most_common(20)
 
+# ----------------------
+# TREND LEADERS DATA
+# ----------------------
+
+signals = {}
+
+for brand in brands:
+    count = text.count(brand.lower())
+    if count > 0:
+        signals[brand.title()] = count
+
+for celeb in celebrities:
+    count = text.count(celeb.lower())
+    if count > 0:
+        signals[celeb.title()] = count
+
+for color in colors:
+    count = text.count(color.lower())
+    if count > 0:
+        signals[color.title()] = count
+
+top_signals = sorted(
+    signals.items(),
+    key=lambda x: x[1],
+    reverse=True
+)[:10]
 
 # ----------------------
 # TREND SNAPSHOT
@@ -309,6 +335,27 @@ with pulse[2]:
 with pulse[3]:
     st.write("Mentions")
     st.subheader(top_words[0][1])
+
+# ----------------------
+# TREND LEADERS
+# ----------------------
+
+st.markdown(
+    '<div class="section-title">Trend Leaders</div>',
+    unsafe_allow_html=True
+)
+
+max_count = max(count for _, count in top_signals)
+
+for signal, count in top_signals:
+
+    score = round((count / max_count) * 100)
+
+    st.progress(
+        score,
+        text=f"{signal} — Signal Strength {score}/100"
+    )
+    
 # ----------------------
 # TOP KEYWORDS
 # ----------------------
