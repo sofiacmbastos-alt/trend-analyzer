@@ -345,16 +345,13 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-max_count = max(count for _, count in top_signals)
-
 for signal, count in top_signals:
 
-    score = round((count / max_count) * 100)
+    st.write(f"**{signal}**")
 
-    st.progress(
-        score,
-        text=f"{signal} — Signal Strength {score}/100"
-    )
+    st.progress(min(count, 100))
+
+    st.caption(f"{count} mentions")
     
 # ----------------------
 # TOP KEYWORDS
