@@ -199,7 +199,7 @@ components.html("""
 <div class="slider-container">
     <img class="slide" src="https://i.pinimg.com/1200x/28/dd/36/28dd360f47a9eb030f249b1a0b780641.jpg">
     <img class="slide" src="https://i.pinimg.com/1200x/b8/02/c7/b802c7fc04eb9863fce68af0bcbd2d9d.jpg">
-    <img class="slide" src="https://i.pinimg.com/1200x/b4/65/0e/b4650e7f0744d2aa854c484fe3bca2c6.jpg">
+    <img class="slide" src="https://i.pinimg.com/1200x/ce/5b/c1/ce5bc159c0a34bc25a128ab1977d98c9.jpg">
 </div>
 """, height=420)
 
