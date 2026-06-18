@@ -140,7 +140,7 @@ st.markdown("""
 # LOAD DATA
 # ----------------------
 
-df = pd.read_csv("merged.csv")
+df = pd.read_csv("mergednew.csv")
 
 # ----------------------
 # HEADER
