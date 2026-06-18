@@ -198,8 +198,8 @@ components.html("""
 
 <div class="slider-container">
     <img class="slide" src="https://i.pinimg.com/1200x/28/dd/36/28dd360f47a9eb030f249b1a0b780641.jpg">
-    <img class="slide" src="https://i.pinimg.com/1200x/e2/81/51/e28151693477cb245285a8b689fa1599.jpg">
-    <img class="slide" src="https://i.pinimg.com/736x/e8/7f/bc/e87fbc7b0d908c6cc7197cb7c5af160f.jpg">
+    <img class="slide" src="https://i.pinimg.com/1200x/3a/93/2b/3a932bccd7b0770b193ed8e338592c3b.jpg">
+    <img class="slide" src="https://i.pinimg.com/1200x/7b/6d/cd/7b6dcdfc6df892c0bfea44b96eb9b717.jpg">
 </div>
 """, height=420)
 
