@@ -17,10 +17,19 @@ font-family: Georgia, serif;
 font-weight: 400;
 font-size: 2.6rem;
 letter-spacing: 2px;
-margin-bottom: 20px;
+margin-bottom: 5px;
 ">
 ABOUT
 </h2>
+
+<p style="
+font-size:0.95rem;
+color:#777;
+letter-spacing:1px;
+margin-bottom:25px;
+">
+Fashion & Culture News Intelligence
+</p>
 
 <p style="
 max-width:750px;
@@ -30,15 +39,11 @@ color:#444;
 font-size:1.05rem;
 ">
 
-A Mode-RN nasce como um espaço de leitura do presente.<br><br>
+A Mode-RN é uma plataforma de curadoria e análise de conteúdo voltada para moda e comportamento contemporâneo.<br><br>
 
-Mais do que acompanhar a moda, o projeto observa os sistemas que a atravessam — 
-o comportamento digital, as dinâmicas de consumo e as formas contemporâneas de circulação de imagem e desejo.<br><br>
+O projeto reúne e organiza notícias de diferentes veículos especializados, criando um espaço de leitura que permite observar como a moda é discutida na mídia e quais temas ganham relevância no presente.<br><br>
 
-A moda é entendida aqui não apenas como estética, mas como linguagem cultural em constante transformação,
-um campo onde identidade, mídia e mercado se reorganizam continuamente.<br><br>
-
-Entre análise e curadoria, o projeto busca organizar fragmentos do agora para compreender os sentidos que estão sendo construídos.
+A partir dessa curadoria, busca-se mapear conexões entre moda, comportamento digital e consumo, facilitando a visualização de narrativas em circulação.
 
 </p>
 
