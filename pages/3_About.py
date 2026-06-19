@@ -12,6 +12,16 @@ margin-top:60px;
 margin-bottom:40px;
 ">
 
+<div style="
+max-width:850px;
+margin:auto;
+background:#ffffff;
+border:1px solid #E5DDD0;
+border-radius:18px;
+padding:45px;
+box-shadow:0px 2px 10px rgba(0,0,0,0.04);
+">
+
 <h2 style="
 font-family: Georgia, serif;
 font-weight: 400;
@@ -19,7 +29,7 @@ font-size: 2.6rem;
 letter-spacing: 2px;
 margin-bottom: 5px;
 ">
-About The Mode-RN
+ABOUT
 </h2>
 
 <p style="
@@ -32,11 +42,11 @@ Fashion & Culture News Intelligence
 </p>
 
 <p style="
-max-width:750px;
-margin:auto;
 line-height:1.9;
 color:#444;
 font-size:1.05rem;
+max-width:700px;
+margin:auto;
 ">
 
 A Mode-RN é uma plataforma de curadoria e análise de conteúdo voltada para moda e comportamento contemporâneo.<br><br>
@@ -46,6 +56,8 @@ O projeto reúne e organiza notícias de diferentes veículos especializados, cr
 A partir dessa curadoria, busca-se mapear conexões entre moda, comportamento digital e consumo, facilitando a visualização de narrativas em circulação.
 
 </p>
+
+</div>
 
 </div>
 """, unsafe_allow_html=True)
