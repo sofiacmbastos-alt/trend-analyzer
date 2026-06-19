@@ -92,8 +92,7 @@ font-size:16px;
 line-height:1.8;
 color:#555555;
 ">
-Developed by students of FGV Communication Rio as part of the
-Programming course taught by Professor Josir Gomes.
+Desenvolvido por estudantes de Comunicação da FGV Rio, o The Mode-RN surgiu no contexto da disciplina de Programação, ministrada pelo professor Josir Gomes.
 </p>
 
 </div>
