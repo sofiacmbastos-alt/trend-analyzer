@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.write("INICIO")
+
 # ==========================================
 # ABOUT THE MODE-RN
 # ==========================================
@@ -103,7 +103,7 @@ DEVELOPERS
 </h2>
 """, unsafe_allow_html=True)
 
-st.write("ANTES DEVELOPERS")
+
 # ==========================================
 # TEAM MEMBERS
 # ==========================================
