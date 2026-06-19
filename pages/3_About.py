@@ -127,7 +127,7 @@ with col1:
 font-family:Georgia, serif;
 font-weight:400;
 ">
-<a href="https://www.linkedin.com/in/SEU-LINKEDIN/"
+<a href="https://br.linkedin.com/in/sofiacmbastos"
 target="_blank"
 style="
 text-decoration:none;
