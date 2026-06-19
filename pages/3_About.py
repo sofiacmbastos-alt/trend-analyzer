@@ -25,7 +25,7 @@ font-weight:300;
 letter-spacing:4px;
 margin-bottom:30px;
 ">
-ABOUT THE MODE-RN
+About The Mode-RN
 </h1>
 
 <p style="
