@@ -111,10 +111,10 @@ col1, spacer, col2 = st.columns([1,0.15,1])
 
 with col1:
 
-    st.image(
-        "fotositesofia.jpeg",
-        width=300
-    )
+    left, center, right = st.columns([1,2,1])
+
+    with center:
+        st.image("fotositesofia.jpeg", width=300)
 
     st.markdown("""
     <div style="
@@ -123,19 +123,19 @@ with col1:
     padding-bottom:30px;
     ">
 
-   <h3 style="
-font-family:Georgia, serif;
-font-weight:400;
-">
-<a href="https://br.linkedin.com/in/sofiacmbastos"
-target="_blank"
-style="
-text-decoration:none;
-color:black;
-">
-Sofia Bastos
-</a>
-</h3>
+    <h3 style="
+    font-family:Georgia, serif;
+    font-weight:400;
+    ">
+    <a href="https://br.linkedin.com/in/sofiacmbastos"
+    target="_blank"
+    style="
+    text-decoration:none;
+    color:black;
+    ">
+    Sofia Bastos
+    </a>
+    </h3>
 
     <p style="
     max-width:350px;
@@ -152,10 +152,10 @@ Sofia Bastos
 
 with col2:
 
-    st.image(
-        "fotoluizapb.jpg",
-        width=300
-    )
+    left, center, right = st.columns([1,2,1])
+
+    with center:
+        st.image("fotoluizapb.jpg", width=300)
 
     st.markdown("""
     <div style="
@@ -164,19 +164,19 @@ with col2:
     padding-bottom:30px;
     ">
 
-   <h3 style="
-font-family:Georgia, serif;
-font-weight:400;
-">
-<a href="https://www.linkedin.com/in/luiza-seda-011472389/"
-target="_blank"
-style="
-text-decoration:none;
-color:black;
-">
-Luiza Seda
-</a>
-</h3>
+    <h3 style="
+    font-family:Georgia, serif;
+    font-weight:400;
+    ">
+    <a href="https://www.linkedin.com/in/luiza-seda-011472389/"
+    target="_blank"
+    style="
+    text-decoration:none;
+    color:black;
+    ">
+    Sofia Bastos
+    </a>
+    </h3>
 
     <p style="
     max-width:350px;
