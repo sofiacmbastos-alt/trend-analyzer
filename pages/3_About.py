@@ -60,7 +60,7 @@ a compreender o cenário contemporâneo.
 # FGV BANNER
 # ==========================================
 
-left, center, right = st.columns([0.05, 1.9, 0.05])
+col1, spacer, col2 = st.columns([1.4,0.15,1.4])
 
 with center:
     st.image(
