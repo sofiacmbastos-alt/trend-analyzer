@@ -111,10 +111,7 @@ col1, spacer, col2 = st.columns([1,0.15,1])
 
 with col1:
 
-    left, center, right = st.columns([1,2,1])
-
-    with center:
-        st.image("fotositesofia.jpeg", width=340)
+    st.image("fotositesofia.jpeg", width=450)
 
     st.markdown("""
     <div style="
@@ -152,10 +149,10 @@ with col1:
 
 with col2:
 
-    left, center, right = st.columns([1,2,1])
-
-    with center:
-        st.image("fotoluizapb.jpg", width=340)
+    st.image(
+        "fotoluizapb.jpg",
+        width=450
+    )
 
     st.markdown("""
     <div style="
@@ -174,7 +171,7 @@ with col2:
     text-decoration:none;
     color:black;
     ">
-    Sofia Bastos
+    Luiza Seda
     </a>
     </h3>
 
