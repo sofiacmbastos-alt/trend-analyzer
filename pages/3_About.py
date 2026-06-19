@@ -162,12 +162,12 @@ with col1:
     ">
     Sofia Bastos 
     <span style="
-font-size:14px;
-vertical-align:middle;
-color:#7A7268;
-">
-↗
-</span>
+    font-size:14px;
+    vertical-align:middle;
+    color:#7A7268;
+    ">
+    ↗
+    </span>
     </a>
     </h3>
 
@@ -209,12 +209,12 @@ with col2:
     ">
     Luiza Seda 
     <span style="
-font-size:14px;
-vertical-align:middle;
-color:#7A7268;
-">
-↗
-</span>
+    font-size:14px;
+    vertical-align:middle;
+    color:#7A7268;
+    ">
+    ↗
+    </span>
     </a>
     </h3>
 
