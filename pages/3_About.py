@@ -114,7 +114,10 @@ col1, spacer, col2 = st.columns([1,0.3,1])
 
 with col1:
 
-    st.image("fotositesofia.jpeg", width=330)
+    st.image(
+    "fotositesofia.jpeg",
+    use_container_width=True
+)
 
     st.markdown("""
     <div style="
@@ -152,7 +155,10 @@ with col1:
 
 with col2:
 
-    st.image("fotoluizapb.jpg", width=330)
+    st.image(
+    "fotoluizapb.jpg",
+    use_container_width=True
+)
 
     st.markdown("""
     <div style="
