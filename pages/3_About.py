@@ -107,7 +107,7 @@ DEVELOPERS
 # TEAM MEMBERS
 # ==========================================
 
-col1, spacer, col2 = st.columns([1,0.15,1])
+col1, spacer, col2 = st.columns([1,0.3,1])
 
 with col1:
 
