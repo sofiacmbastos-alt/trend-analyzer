@@ -37,30 +37,17 @@ text-align:center;
 color:#333333;
 ">
 <strong>The Mode-RN</strong> nasce de um jogo de palavras entre
-<i>The Mode Right Now</i> — “o modo de agora” — e a pronúncia da palavra
-<i>Modern</i>. O nome traduz a proposta da plataforma: observar o presente
-para compreender os sinais que apontam para o futuro.
+<i>The Mode Right Now</i> — "o modo de agora" — e a pronúncia da palavra
+<i>Modern</i>. O nome reflete a missão da plataforma: compreender o presente
+para antecipar as transformações que definem o futuro.
 
 <br><br>
 
-Em um cenário de informação cada vez mais acelerado, acompanhar tendências
-exige mais do que consumir notícias isoladas. O The Mode-RN reúne conteúdos
-de veículos especializados em moda, comportamento e consumo, transformando
-diferentes perspectivas em uma experiência de pesquisa organizada, visual e acessível.
-
-<br><br>
-
-Ao centralizar e explorar essas narrativas, a plataforma permite identificar
-temas emergentes, movimentos culturais e mudanças de comportamento que ajudam
-a compreender o cenário contemporâneo.
-
-<br><br>
-
-A plataforma reúne conteúdos de publicações especializadas em moda,
-comportamento e consumo, permitindo acompanhar padrões recorrentes,
-novas narrativas e sinais culturais que ajudam a interpretar tendências
-em formação.
-</p>
+Reunindo conteúdos de veículos especializados em moda, comportamento e consumo,
+o <strong>The Mode-RN</strong> organiza diferentes perspectivas em um único espaço
+de pesquisa e exploração. A plataforma permite acompanhar narrativas recorrentes,
+identificar movimentos culturais emergentes e analisar os sinais que revelam como
+hábitos, valores e tendências estão evoluindo.
 
 </div>
 """, unsafe_allow_html=True)
