@@ -153,7 +153,7 @@ Sofia Bastos
 with col2:
 
     st.image(
-        "https://FOTO-DA-DEVELOPER.jpg",
+        "https://SUA-FOTO.jpg",
         use_container_width=True
     )
 
@@ -164,7 +164,7 @@ with col2:
     padding-bottom:30px;
     ">
 
-    <h3 style="
+   <h3 style="
 font-family:Georgia, serif;
 font-weight:400;
 ">
@@ -184,8 +184,8 @@ Sofia Bastos
     line-height:1.8;
     color:#555555;
     ">
-    Estudante de Comunicação na FGV com interesse em cultura
-    digital, análise de conteúdo e estratégias de comunicação.
+    Estudante de Comunicação na FGV com interesse em moda,
+    comportamento digital, consumo e pesquisa de tendências.
     </p>
 
     </div>
