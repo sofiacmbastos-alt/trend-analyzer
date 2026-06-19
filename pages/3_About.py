@@ -19,7 +19,7 @@ font-size: 2.6rem;
 letter-spacing: 2px;
 margin-bottom: 5px;
 ">
-ABOUT
+About The Mode-RN
 </h2>
 
 <p style="
