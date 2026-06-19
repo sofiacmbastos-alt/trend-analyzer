@@ -7,7 +7,7 @@ import streamlit as st
 
 st.markdown("""
 <div style="
-max-width:1400px;
+max-width:2000px;
 margin:auto;
 background:white;
 padding:50px;
