@@ -168,7 +168,7 @@ with col2:
 font-family:Georgia, serif;
 font-weight:400;
 ">
-<a href="https://www.linkedin.com/in/SEU-LINKEDIN/"
+<a href="https://www.linkedin.com/in/luiza-seda-011472389/"
 target="_blank"
 style="
 text-decoration:none;
