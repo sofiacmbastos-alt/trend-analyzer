@@ -7,47 +7,40 @@ import streamlit as st
 
 st.markdown("""
 <div style="
-max-width:2000px;
-margin:auto;
-background:white;
-padding:50px;
-border-radius:24px;
-border:1px solid #E5DDD0;
-margin-top:30px;
+text-align:center;
+margin-top:60px;
 margin-bottom:40px;
 ">
 
-<h1 style="
-text-align:center;
-font-family:Georgia, serif;
-font-size:3rem;
-font-weight:300;
-letter-spacing:2px;
-margin-bottom:30px;
+<h2 style="
+font-family: Georgia, serif;
+font-weight: 400;
+font-size: 2.6rem;
+letter-spacing: 2px;
+margin-bottom: 20px;
 ">
-About The Mode-RN
-</h1>
+ABOUT
+</h2>
 
 <p style="
-max-width:1200px;
+max-width:750px;
 margin:auto;
-font-size:18px;
 line-height:1.9;
-text-align:center;
-color:#333333;
+color:#444;
+font-size:1.05rem;
 ">
-<strong>The Mode-RN</strong> nasce de um jogo de palavras entre
-<i>The Mode Right Now</i> — "o modo de agora" — e a pronúncia da palavra
-<i>Modern</i>. O nome reflete a missão da plataforma: compreender o presente
-para antecipar as transformações que definem o futuro.
 
-<br><br>
+A Mode-RN nasce como um espaço de leitura do presente.<br><br>
 
-Reunindo conteúdos de veículos especializados em moda, comportamento e consumo,
-o <strong>The Mode-RN</strong> organiza diferentes perspectivas em um único espaço
-de pesquisa e exploração. A plataforma permite acompanhar narrativas recorrentes,
-identificar movimentos culturais emergentes e analisar os sinais que revelam como
-hábitos, valores e tendências estão evoluindo.
+Mais do que acompanhar a moda, o projeto observa os sistemas que a atravessam — 
+o comportamento digital, as dinâmicas de consumo e as formas contemporâneas de circulação de imagem e desejo.<br><br>
+
+A moda é entendida aqui não apenas como estética, mas como linguagem cultural em constante transformação,
+um campo onde identidade, mídia e mercado se reorganizam continuamente.<br><br>
+
+Entre análise e curadoria, o projeto busca organizar fragmentos do agora para compreender os sentidos que estão sendo construídos.
+
+</p>
 
 </div>
 """, unsafe_allow_html=True)
