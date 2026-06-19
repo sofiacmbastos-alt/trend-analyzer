@@ -60,7 +60,6 @@ a compreender o cenário contemporâneo.
 # FGV BANNER
 # ==========================================
 
-with center:
     st.image(
         "fgv-rj (1) (1).jpeg",
         use_container_width=True
