@@ -61,7 +61,7 @@ a compreender o cenário contemporâneo.
 # ==========================================
 
 st.image(
-    "https://SEU-LINK-BANNER-FGV.jpg",
+    "fgv-rj (1).jpeg",
     use_container_width=True
 )
 
