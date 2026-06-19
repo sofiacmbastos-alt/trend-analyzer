@@ -134,10 +134,14 @@ col1, spacer, col2 = st.columns([0.9,0.25,0.9])
 
 with col1:
 
-    st.image(
-        "fotositesofia.jpeg",
-        width=250
-    )
+   st.markdown(
+    """
+    <div style="text-align:center;">
+        <img src="fotositesofia.jpeg" width="250">
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
     st.markdown("""
     <div style="
@@ -173,10 +177,14 @@ with col1:
 
 with col2:
 
-    st.image(
-        "fotoluizapb.jpg",
-        width=250
-    )
+    st.markdown(
+    """
+    <div style="text-align:center;">
+        <img src="fotoluizapb.jpg" width="250">
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
     st.markdown("""
     <div style="
