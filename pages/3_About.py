@@ -160,7 +160,14 @@ with col1:
     text-decoration:none;
     color:black;
     ">
-    Sofia Bastos ↗
+    Sofia Bastos 
+    <span style="
+font-size:14px;
+vertical-align:middle;
+color:#7A7268;
+">
+↗
+</span>
     </a>
     </h3>
 
@@ -200,7 +207,14 @@ with col2:
     text-decoration:none;
     color:black;
     ">
-    Luiza Seda ↗
+    Luiza Seda 
+    <span style="
+font-size:14px;
+vertical-align:middle;
+color:#7A7268;
+">
+↗
+</span>
     </a>
     </h3>
 
