@@ -53,6 +53,13 @@ diferentes perspectivas em uma experiência de pesquisa organizada, visual e ace
 Ao centralizar e explorar essas narrativas, a plataforma permite identificar
 temas emergentes, movimentos culturais e mudanças de comportamento que ajudam
 a compreender o cenário contemporâneo.
+
+<br><br>
+
+A plataforma reúne conteúdos de publicações especializadas em moda,
+comportamento e consumo, permitindo acompanhar padrões recorrentes,
+novas narrativas e sinais culturais que ajudam a interpretar tendências
+em formação.
 </p>
 
 </div>
@@ -61,6 +68,23 @@ a compreender o cenário contemporâneo.
 # ==========================================
 # FGV BANNER
 # ==========================================
+st.markdown("""
+<div style="
+text-align:center;
+margin-bottom:20px;
+">
+
+<p style="
+text-transform:uppercase;
+letter-spacing:3px;
+font-size:0.85rem;
+color:#7A7268;
+">
+Projeto Acadêmico
+</p>
+
+</div>
+""", unsafe_allow_html=True)
 
 st.image(
         "fotogv.jpeg",
@@ -149,6 +173,21 @@ with col1:
     Estudante de Comunicação na FGV com interesse em moda,
     comportamento digital, consumo e pesquisa de tendências.
     </p>
+    
+<p style="
+margin-top:12px;
+font-size:14px;
+letter-spacing:1px;
+">
+<a href="https://br.linkedin.com/in/sofiacmbastos"
+target="_blank"
+style="
+text-decoration:none;
+color:#7A7268;
+">
+LinkedIn ↗
+</a>
+</p>
 
     </div>
     """, unsafe_allow_html=True)
@@ -191,6 +230,21 @@ with col2:
     comportamento digital, consumo e pesquisa de tendências.
     </p>
 
+<p style="
+margin-top:12px;
+font-size:14px;
+letter-spacing:1px;
+">
+<a href="https://www.linkedin.com/in/luiza-seda-011472389/"
+target="_blank"
+style="
+text-decoration:none;
+color:#7A7268;
+">
+LinkedIn ↗
+</a>
+</p>
+
     </div>
     """, unsafe_allow_html=True)
 
@@ -212,7 +266,7 @@ font-style:italic;
 color:#444444;
 letter-spacing:0.5px;
 ">
-Tracking the conversations shaping the future of fashion and culture.
+Understanding today's signals to anticipate tomorrow's culture.
 </p>
 
 </div>
