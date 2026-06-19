@@ -99,7 +99,7 @@ font-weight:300;
 letter-spacing:3px;
 margin-bottom:40px;
 ">
-THE TEAM
+DEVELOPERS
 </h2>
 """, unsafe_allow_html=True)
 
