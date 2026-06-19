@@ -174,7 +174,7 @@ style="
 text-decoration:none;
 color:black;
 ">
-Sofia Bastos
+Luiza Seda
 </a>
 </h3>
 
