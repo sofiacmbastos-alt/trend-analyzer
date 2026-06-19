@@ -173,22 +173,6 @@ with col1:
     Estudante de Comunicação na FGV com interesse em moda,
     comportamento digital, consumo e pesquisa de tendências.
     </p>
-    
-<p style="
-margin-top:12px;
-font-size:14px;
-letter-spacing:1px;
-">
-<a href="https://br.linkedin.com/in/sofiacmbastos"
-target="_blank"
-style="
-text-decoration:none;
-color:#7A7268;
-">
-LinkedIn ↗
-</a>
-</p>
-
     </div>
     """, unsafe_allow_html=True)
 
@@ -229,22 +213,6 @@ with col2:
     Estudante de Comunicação na FGV com interesse em moda,
     comportamento digital, consumo e pesquisa de tendências.
     </p>
-
-<p style="
-margin-top:12px;
-font-size:14px;
-letter-spacing:1px;
-">
-<a href="https://www.linkedin.com/in/luiza-seda-011472389/"
-target="_blank"
-style="
-text-decoration:none;
-color:#7A7268;
-">
-LinkedIn ↗
-</a>
-</p>
-
     </div>
     """, unsafe_allow_html=True)
 
