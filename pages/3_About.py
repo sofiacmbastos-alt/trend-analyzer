@@ -22,7 +22,7 @@ text-align:center;
 font-family:Georgia, serif;
 font-size:3rem;
 font-weight:300;
-letter-spacing:4px;
+letter-spacing:2px;
 margin-bottom:30px;
 ">
 About The Mode-RN
