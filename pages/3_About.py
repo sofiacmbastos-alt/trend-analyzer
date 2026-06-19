@@ -108,7 +108,7 @@ st.write("ANTES DEVELOPERS")
 # TEAM MEMBERS
 # ==========================================
 
-col1, spacer, col2 = st.columns([0.8,0.4,0.8])
+col1, spacer, col2 = st.columns([1,0.1,1])
 
 with col1:
 
