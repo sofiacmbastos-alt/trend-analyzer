@@ -156,8 +156,7 @@ with col1:
     line-height:1.8;
     color:#555555;
     ">
-    Estudante de Comunicação na FGV com interesse em moda,
-    comportamento digital, consumo e pesquisa de tendências.
+    Estudante de Comunicação na FGV com atenção à moda contemporânea como expressão cultural, em diálogo com comportamento digital e práticas de consumo.
     </p>
     </div>
     """, unsafe_allow_html=True)
@@ -196,8 +195,7 @@ with col2:
     line-height:1.8;
     color:#555555;
     ">
-    Estudante de Comunicação na FGV com interesse em moda,
-    comportamento digital, consumo e pesquisa de tendências.
+    Estudante de Comunicação na FGV com interesse em comunicação, comportamento digital e consumo.
     </p>
     </div>
     """, unsafe_allow_html=True)
