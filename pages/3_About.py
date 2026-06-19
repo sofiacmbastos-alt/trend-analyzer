@@ -18,7 +18,7 @@ margin-bottom:40px;
 <h1 style="
 text-align:center;
 font-family:Georgia, serif;
-font-size:3rem;
+font-size:3.5rem;
 font-weight:300;
 letter-spacing:4px;
 margin-bottom:30px;
@@ -27,7 +27,7 @@ ABOUT THE MODE-RN
 </h1>
 
 <p style="
-max-width:900px;
+max-width:1200px;
 margin:auto;
 font-size:18px;
 line-height:1.9;
