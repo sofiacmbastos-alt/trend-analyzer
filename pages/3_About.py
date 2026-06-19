@@ -126,7 +126,7 @@ with col1:
 
     st.image(
         "fotositesofia.jpeg",
-        width=330
+        width=250
     )
 
     st.markdown("""
@@ -166,7 +166,7 @@ with col2:
 
     st.image(
         "fotoluizapb.jpg",
-        width=330
+        width=250
     )
 
     st.markdown("""
