@@ -149,10 +149,7 @@ with col1:
 
 with col2:
 
-    st.image(
-        "fotoluizapb.jpg",
-        width=330
-    )
+    st.image("fotoluizapb.jpg", width=330)
 
     st.markdown("""
     <div style="
