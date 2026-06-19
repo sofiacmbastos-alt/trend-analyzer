@@ -60,10 +60,13 @@ a compreender o cenário contemporâneo.
 # FGV BANNER
 # ==========================================
 
-st.image(
-    "fgv-rj (1) (1).jpeg",
-    use_container_width=True
-)
+left, center, right = st.columns([0.05, 1.9, 0.05])
+
+with center:
+    st.image(
+        "fgv-rj (1) (1).jpeg",
+        use_container_width=True
+    )
 
 st.markdown("""
 <div style="
