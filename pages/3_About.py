@@ -20,7 +20,7 @@ margin-bottom:40px;
 <h1 style="
 text-align:center;
 font-family:Georgia, serif;
-font-size:3.5rem;
+font-size:3rem;
 font-weight:300;
 letter-spacing:4px;
 margin-bottom:30px;
