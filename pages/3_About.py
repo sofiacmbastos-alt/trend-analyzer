@@ -114,7 +114,7 @@ with col1:
     left, center, right = st.columns([1,2,1])
 
     with center:
-        st.image("fotositesofia.jpeg", width=320)
+        st.image("fotositesofia.jpeg", width=340)
 
     st.markdown("""
     <div style="
