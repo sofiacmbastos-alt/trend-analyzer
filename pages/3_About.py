@@ -113,7 +113,7 @@ with col1:
 
     st.image(
         "fotositesofia.jpeg",
-        use_container_width=True
+        width=300
     )
 
     st.markdown("""
@@ -154,7 +154,7 @@ with col2:
 
     st.image(
         "fotoluizapb.jpg",
-        use_container_width=True
+        width=300
     )
 
     st.markdown("""
