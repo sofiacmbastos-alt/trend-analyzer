@@ -195,8 +195,8 @@ with col2:
 st.markdown("""
 <div style="
 text-align:center;
-padding-top:40px;
-padding-bottom:20px;
+padding-top:80px;
+font-size:1rem;
 ">
 
 <p style="
