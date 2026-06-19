@@ -61,7 +61,7 @@ a compreender o cenário contemporâneo.
 # ==========================================
 
 st.image(
-        "fgv-rj (1) (1).jpeg",
+        "fotogv.jpeg",
         use_container_width=True
     )
 
